@@ -1,0 +1,36 @@
+/* Header */
+h1 {
+    text-align: center;
+    color: cyan;
+}
+/* Input Name Form Div */
+.User-Input {
+    text-align: center;
+}
+/* Submit Button */
+.Submit-Button {
+    display: inline-block;
+    border: none;
+    background-color: white;
+}
+.Submit-Button button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.Submit-Button button img {
+    width: 30px;
+}
+.Submit-Button button:hover {
+    background-color: lightcyan;
+    transition: background-color 0.3s;
+}
+/* Welcome Paragraph */
+#Welcome {
+    text-align: center;
+}
+/* Footer */
+footer {
+    background-color: lightcyan;
+    text-align: center;
+}

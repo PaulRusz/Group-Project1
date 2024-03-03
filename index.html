@@ -5,36 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="./Assets/style.css" />
     <title>Workout Tracker</title>
+    <!-- Bootstrap CSS Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- CSS Style Sheet -->
+    <link rel="stylesheet" href="./Assets/styles/style.css">
 </head>
-
 
 <body>
     <header>
-        <h1>(insert user name here) Workout Tracker</h1>
+        <h1>Workout Tracker</h1>
     </header>
 
-    <main>
+    <!-- First page where the user enters their name. -->
+    <div class="User-Input">
+        <br>
+        <form id="userInput">
+            <label for="User-Name">Please enter your first name to continue:</label>
+            <br>
+            <input type="text" id="User-Name" name="User-Name" placeholder="First Name">
+            <div class="Submit-Button">
+                <button type="submit" form="userInput" value="Submit">
+                    <img id="submitButton" src="assets/images/Submit-Arrow-Button.svg" alt="Submit Arrow">
+                </button>
+            </div>
+        </form>
+    </div>
 
-    </main>
-
-
-
-
-
-
+    <!-- User's specific workout page. -->
+    <div id="Workout-Page" style="display: none;">
+        <!-- Welcome back note. -->
+        <p id="Welcome">Welcome back to your fitness tracker!</p>
+        <hr>
+        <footer>
+            <h2>Made by (names)</h2>
+            <p>&copy; 2024 (names)</p>
+        </footer>
+    </div>
+    
+    <!-- jQuery Script Files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="./Assets/script.js"></script>
+     <!-- Day.js Script File -->
+     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js" integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+     <!-- Bootstrap JavaScript File -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+     <!-- JavaScript File -->
+    <script src="./Assets/scripts/script.js"></script>
+
 </body>
-
-<footer>
-    <h2>Made by (names)</h2>
-    <p>
-        &copy; 2024 (names)
-    </p>
-
-</footer>
+</html>
