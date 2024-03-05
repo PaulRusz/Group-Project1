@@ -52,31 +52,30 @@ h1 {
 
 /* Calendar display */
 #calendarBox {
-    display: flex;
     background: lightblue;
     min-height: 400px;
     padding: 10px;
-    align-items: center;
-    justify-content: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    /* Add box shadow values */
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .cal-container {
-    background: white;
     width: 500px;
     border-radius: 10px;
     margin: 10px;
     display: flex;
-    /* Add display flex */
 }
 
 .cal-header {
     display: flex;
-    align-items: center;
     padding: 10px;
     justify-content: space-between;
+}
+
+.weekdays {
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 header .cal-nav {
@@ -86,18 +85,24 @@ header .cal-nav {
 header .cal-nav span {
     height: 35px;
     width: 35px;
-    margin: 1px;
+    margin: 0px;
     text-align: center;
     border-radius: 50%;
     line-height: 38px;
-    color: aqua;
     font-size: 2rem;
+    border: 0.2em solid black;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 .cal-nav span:last-child {
     margin-right: -15px;
 }
 
+header .cal-nav span:hover {
+    background: whitesmoke;
+}
 
 header .cal-current-date {
     font-size: 2rem;
@@ -121,7 +126,7 @@ header .cal-current-date {
 
 .cal-body li {
     width: calc(100% / 7);
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: black;
 }
 
@@ -136,12 +141,21 @@ header .cal-current-date {
     content: "";
     top: 50%;
     left: 50%;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
 }
+
+.cal-dates li:not(.active):hover::before {
+    background-color: lightcoral;
+}
+
+.cal-dates li.active::before {
+    background: greenyellow;
+}
+
 
 
 
