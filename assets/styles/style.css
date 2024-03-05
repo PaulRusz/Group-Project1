@@ -1,36 +1,158 @@
 /* Header */
 h1 {
     text-align: center;
-    color: cyan;
+    background-color: lightblue;
+    color: lightcoral;
 }
+
 /* Input Name Form Div */
 .User-Input {
     text-align: center;
 }
+
 /* Submit Button */
 .Submit-Button {
     display: inline-block;
     border: none;
     background-color: white;
 }
+
 .Submit-Button button {
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
+
 .Submit-Button button img {
     width: 30px;
 }
+
 .Submit-Button button:hover {
-    background-color: lightcyan;
+    background-color: lightblue;
     transition: background-color 0.3s;
 }
+
 /* Welcome Paragraph */
 #Welcome {
     text-align: center;
+    background-color: lightblue;
 }
+
+
+
+/* Date/Time display */
+.date {
+    font-size: 20px;
+    padding-left: 35px;
+    margin: 15px;
+    line-height: 10px;
+}
+
+
+
+/* Calendar display */
+#calendarBox {
+    display: flex;
+    background: lightblue;
+    min-height: 400px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Add box shadow values */
+}
+
+.cal-container {
+    background: white;
+    width: 500px;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    /* Add display flex */
+}
+
+.cal-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+header .cal-nav {
+    display: flex;
+}
+
+header .cal-nav span {
+    height: 35px;
+    width: 35px;
+    margin: 1px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 38px;
+    color: aqua;
+    font-size: 2rem;
+}
+
+.cal-nav span:last-child {
+    margin-right: -15px;
+}
+
+
+header .cal-current-date {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.cal-body {
+    padding: 30px;
+}
+
+.cal-body ul {
+    list-style: none;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.cal-body .cal-dates {
+    margin-bottom: 20px;
+}
+
+.cal-body li {
+    width: calc(100% / 7);
+    font-size: 1rem;
+    color: black;
+}
+
+.cal-body .cal-dates li {
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.cal-dates li::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+
+
 /* Footer */
 footer {
-    background-color: lightcyan;
+    background-color: lightblue;
     text-align: center;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 80%;
+    }
 }
