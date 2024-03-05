@@ -52,12 +52,14 @@ h1 {
 
 /* Calendar display */
 #calendarBox {
+    clear: right;
     background: lightblue;
     min-height: 400px;
     padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    box-shadow: 10px 5px 5px grey;
+    border-radius: 15px;
 }
 
 .cal-container {
