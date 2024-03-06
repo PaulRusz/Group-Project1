@@ -78,10 +78,11 @@ p.Date {
     padding: 20px;
     margin: 10px;
     border-radius: 15px;
+    box-shadow: 10px 5px 5px grey;
 }
 
 .exerciseButton {
-    background-color: black;
+    background-color: lightslategray;
     border-radius: .5em;
     border: none;
     color: white;
@@ -97,16 +98,21 @@ p.Date {
     visibility: hidden;
     display: flex;
     flex-direction: column;
-    color: white;
+    color: black;
     text-align: center;
-    padding: 0;
+    padding: 15px;
+    cursor: pointer;
 }
 
 .workoutChoices li {
-    background: grey;
+    background: lightcyan;
     border-radius: .5em;
     margin-bottom: 5px;
-    
+    transition-delay: calc(50ms * var(--delay));
+}
+
+.workoutChoices li:hover {
+    background: lightgrey;
 }
 
 .exerciseButton:hover+.workoutChoices {
