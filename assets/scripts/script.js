@@ -50,6 +50,11 @@ if (userName) {
 console.log(currentTime)
 $('#currentDate').html(currentDate)
 
+// Function to have the workout choices appear
+var exeButton = $(".exerciseButton").on("click", function () {
+    $(".workoutChoices").css("visibility", "visible")
+})
+
 
 // Variables for calendar
 var date = new Date();
