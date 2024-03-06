@@ -1,8 +1,8 @@
 // Script to change heading to display the user's name
 
-// Heading 1 Element
+// Variable: Heading 1
 var header = document.querySelector('h1');
-// User Input Form Element
+// User Input Form
 var userInput = document.getElementById('userInput');
 // User-Specific Workout Page Element
 var workoutPage = document.getElementById('Workout-Page');
@@ -106,4 +106,3 @@ const calendarFunction = () => {
 }
 
 calendarFunction();
-

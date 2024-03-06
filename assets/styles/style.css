@@ -38,22 +38,44 @@ h1 {
     background-color: lightblue;
 }
 
+/* Display Form & Calendar Side-by-Side */
+main {
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+}
 
-
-/* Date/Time display */
-.date {
+/* Date & Time Display */
+.Date {
     font-size: 20px;
-    padding-left: 35px;
-    margin: 15px;
-    line-height: 10px;
+    text-align: center;
+}
+
+p.Date {
+    text-align: center;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+#currentDate {
+    padding-bottom: 20px;
 }
 
 /* Exercise Form */
+.Form-Content {
+    margin: 15px;
+    text-align: center;
+}
+
+.Form-Instructions {
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+}
+
 .selectForm {
     background-color: lightblue;
     padding: 20px;
-    min-height: 300px;
-    max-width: 300px;
     margin: 10px;
     border-radius: 15px;
 }
@@ -66,26 +88,32 @@ h1 {
     font-size: 35px;
     padding-left: 15px;
     padding-right: 15px;
+    margin-bottom: 5px;
 }
 
 .workoutChoices {
     list-style: none;
     font-size: 20px;
     visibility: hidden;
-    display: block;
+    display: flex;
+    flex-direction: column;
     color: white;
+    text-align: center;
+    padding: 0;
 }
 
 .workoutChoices li {
     background: grey;
     border-radius: .5em;
+    margin-bottom: 5px;
+    
 }
 
 .exerciseButton:hover+.workoutChoices {
     visibility: visible;
 }
 
-/* Calendar display */
+/* Calendar Display */
 #calendarBox {
     clear: right;
     background: lightblue;
@@ -117,15 +145,13 @@ h1 {
 
 header .cal-nav {
     display: flex;
+    padding-right: 15px;
 }
 
 header .cal-nav span {
     height: 35px;
     width: 35px;
-    margin: 0px;
     text-align: center;
-    border-radius: 50%;
-    line-height: 38px;
     font-size: 2rem;
     border: 0.2em solid black;
     display: inline-block;
@@ -193,18 +219,21 @@ header .cal-current-date {
     background: greenyellow;
 }
 
-
-
-
-/* Footer */
+/* Footer Display */
 footer {
     background-color: lightblue;
     text-align: center;
+    padding: 5px;
+    margin-top: 10px;
 }
-
 
 @media only screen and (max-width: 600px) {
     .container {
         width: 80%;
     }
+}
+
+#Footer-Paragraph {
+    font-size: 20px;
+    padding-top: 5px;
 }
