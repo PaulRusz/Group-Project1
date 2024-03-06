@@ -48,10 +48,41 @@ h1 {
     line-height: 10px;
 }
 
-
-#selectForm {
+/* Exercise Form */
+.selectForm {
     background-color: lightblue;
     padding: 20px;
+    min-height: 300px;
+    max-width: 300px;
+    margin: 10px;
+    border-radius: 15px;
+}
+
+.exerciseButton {
+    background-color: black;
+    border-radius: .5em;
+    border: none;
+    color: white;
+    font-size: 35px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.workoutChoices {
+    list-style: none;
+    font-size: 20px;
+    visibility: hidden;
+    display: block;
+    color: white;
+}
+
+.workoutChoices li {
+    background: grey;
+    border-radius: .5em;
+}
+
+.exerciseButton:hover+.workoutChoices {
+    visibility: visible;
 }
 
 /* Calendar display */
