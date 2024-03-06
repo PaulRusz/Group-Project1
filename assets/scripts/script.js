@@ -1,21 +1,13 @@
-// Script to change heading to display the user's name
+// Display User's Name in Heading 1
 
-// Variable: Heading 1
+// Variables
 var header = document.querySelector('h1');
-// User Input Form
 var userInput = document.getElementById('userInput');
-// User-Specific Workout Page Element
 var workoutPage = document.getElementById('Workout-Page');
+var welcomeMessage = document.getElementById('Welcome');
+
 // Check if User Name is Already Stored in Local Storage
 var userName = localStorage.getItem('userName');
-
-// Variables for showing the current date & time
-var currentDate = dayjs().format('dddd, MMMM D, YYYY, h:mm a');
-var currentTime = dayjs().hour();
-
-
-
-
 
 // Function to Retrieve User Name if it's Been Submitted Before
 if (userName) {
@@ -25,6 +17,8 @@ if (userName) {
     workoutPage.style.display = 'block';
     // Hide the User Name Form
     userInput.style.display = 'none';
+    // Show the Welcome Message
+    welcomeMessage.style.display = 'block';
 
     // Function to Submit User Name for the First Time
 } else {
@@ -42,9 +36,38 @@ if (userName) {
         workoutPage.style.display = 'block';
         // Hide User Name Form Once Submitted
         userInput.style.display = 'none';
+        // Hide the Welcome Message
+        welcomeMessage.style.display = 'none';
     });
 };
 
+// Quotable API Random Quote
+
+// Variables
+var quote = 'https://api.quotable.io/random';
+var options = {method: 'GET', headers: {Accept: 'application/json'}};
+
+// Fetch Quote Function
+// Fetch Quote
+$(document).ready(function() {
+    $.ajax({
+        url: 'https://api.quotable.io/random',
+        dataType: 'json',
+        success: function(data) {
+            var quote = data.content;
+            $('#Quote').text('"' + quote + '"');
+        },
+        error: function() {
+            $('#Quote').text("Your self-worth is determined by you. You don't have to depend on someone telling you who you are.");
+        }
+    });
+});
+
+// Display Date & Time
+
+// Variables
+var currentDate = dayjs().format('dddd, MMMM D, YYYY, h:mm a');
+var currentTime = dayjs().hour();
 
 // Sets date & time into dashboard header area
 console.log(currentTime)
@@ -55,8 +78,9 @@ var exeButton = $(".exerciseButton").on("click", function () {
     $(".workoutChoices").css("visibility", "visible")
 })
 
+// Display Calendar
 
-// Variables for calendar
+// Variables
 var date = new Date();
 var calendarYear = date.getFullYear();
 var calendarMonth = date.getMonth();

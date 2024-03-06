@@ -1,8 +1,19 @@
-/* Header */
+/* Header Display */
+header {
+    background-color: lightblue;
+    padding: 10px;
+}
+
+/* Page Heading */
 h1 {
     text-align: center;
-    background-color: lightblue;
     color: lightcoral;
+}
+
+/* Welcome Paragraph */
+#Welcome {
+    text-align: center;
+    background-color: lightblue;
 }
 
 /* Input Name Form Div */
@@ -32,10 +43,11 @@ h1 {
     transition: background-color 0.3s;
 }
 
-/* Welcome Paragraph */
-#Welcome {
+/* Quote Display */
+#Quote {
     text-align: center;
-    background-color: lightblue;
+    font-size: 18px;
+    font-style: italic;
 }
 
 /* Display Form & Calendar Side-by-Side */
@@ -69,7 +81,7 @@ p.Date {
 
 .Form-Instructions {
     padding: 5px;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
 }
 
