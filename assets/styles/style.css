@@ -49,6 +49,10 @@ h1 {
 }
 
 
+#selectForm {
+    background-color: lightblue;
+    padding: 20px;
+}
 
 /* Calendar display */
 #calendarBox {
