@@ -7,8 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Workout Tracker</title>
     <!-- Bootstrap CSS Link -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
-        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <!-- CSS Style Sheet -->
     <link rel="stylesheet" href="./Assets/styles/style.css">
 </head>
@@ -18,7 +17,7 @@
         <h1>Workout Tracker</h1>
     </header>
 
-    <!-- First page where the user enters their name. -->
+    <!-- Landing Page to Enter User's First Name -->
     <div class="User-Input">
         <br>
         <form id="userInput">
@@ -33,84 +32,80 @@
         </form>
     </div>
 
-    <!-- User's specific workout page. -->
+    <!-- User's Specific Workout Page -->
     <div id="Workout-Page" style="display: none;">
-        <!-- Welcome back note. -->
+        <!-- Welcome Back Message -->
         <p id="Welcome">Welcome back to your fitness tracker!</p>
+        <!-- TO-DO: Use This Paragraph ID for JavaScript Quote API -->
+        <p id="Quote"></p>
         <hr>
-
-        <div class="date">
-            <p>
-                <b>Today's Date:</b>
-            </p>
-            <p id="currentDate"></p>
-        </div>
-
-        <div class="selectForm">
-            <container>
-                <button class="exerciseButton">Choose an Exercise Type</button><br>
-                <ul class="workoutChoices" style="visibility: hidden;">
-                    <li>Complete Arm Workout</li>
-                    <li>Lower Body Workout</li>
-                    <li>Upper Body Workout</li>
-                    <li>Back Workout</li>
-                    <li>Ab Workout</li>
-                    <li>Cardio Workout</li>
-                    <li>Rest Day</li>
-                </ul>
-            </container>
-        </div>
-
-
-
-        <container class="cal-container">
-            <div id="calendarBox">
-                <header class="cal-header">
-                    <p class="cal-current-date"></p>
-                    <div class="cal-nav">
-                        <span id="cal-prev" class="material-symbols-rounded"></span>
-                        <span id="cal-next" class="material-symbols-rounded"></span>
-                    </div>
-                </header>
-                <div class="cal-body">
-                    <ul class="weekdays">
-                        <li>Sun</li>
-                        <li>Mon</li>
-                        <li>Tues</li>
-                        <li>Wed</li>
-                        <li>Thurs</li>
-                        <li>Fri</li>
-                        <li>Sat</li>
-                    </ul>
-                    <ul class="cal-dates">
-                        <!-- Your calendar dates will go here -->
+        <!-- Main Content Container (Date, Form, Calendar) -->
+        <main>
+            <!-- Form Container -->
+            <div class="Form-Content">
+                <!-- Date Container -->
+                <div class="Date">
+                    <p class="Date"><strong>Today's Date:</strong></p>
+                    <p id="currentDate"></p>
+                </div>
+                <!-- Form Container -->
+                <p class="Form-Instructions">What type of workouts would you like to complete today?</p>
+                <div class="selectForm">
+                    <button class="exerciseButton">Choose an Exercise Type</button><br>
+                    <ul class="workoutChoices" style="visibility: hidden;">
+                        <li>Complete Arm Workout</li>
+                        <li>Lower Body Workout</li>
+                        <li>Upper Body Workout</li>
+                        <li>Back Workout</li>
+                        <li>Ab Workout</li>
+                        <li>Cardio Workout</li>
+                        <li>Rest Day</li>
                     </ul>
                 </div>
             </div>
-        </container>
+            <!-- Calendar Container -->
+            <div class="cal-container">
+                <div id="calendarBox">
+                    <header class="cal-header">
+                        <p class="cal-current-date"></p>
+                        <div class="cal-nav">
+                            <span id="cal-prev" class="material-symbols-rounded"><img class="Calendar-Nav-Button" src="assets/images/Previous-Arrow.svg" alt="Back-Button"></span>
+                            <span id="cal-next" class="material-symbols-rounded"><img class="Calendar-Nav-Button" src="assets/images/Next-Arrow.svg" alt="Back-Button"></span>
+                        </div>
+                    </header>
+                    <div class="cal-body">
+                        <ul class="weekdays">
+                            <li>Sun</li>
+                            <li>Mon</li>
+                            <li>Tues</li>
+                            <li>Wed</li>
+                            <li>Thurs</li>
+                            <li>Fri</li>
+                            <li>Sat</li>
+                        </ul>
+                        <ul class="cal-dates">
+                            <!-- Your calendar dates will go here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
 
-    </div>
-
-
+    <!-- Page Footer -->
     <footer>
-        <h2>Made by (names)</h2>
-        <p>&copy; 2024 (names)</p>
+        <p id="Footer-Paragraph">Made with ♡ by Paul Ruszkay, Emily Simone, and Tania Bezerra</p>
+        <p>&copy; 2024 Paul Ruszkay, Emily Simone, and Tania Bezerra</p>
     </footer>
-    </div>
-
+    
     <!-- jQuery Script Files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- Day.js Script File -->
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js" integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
     <!-- Bootstrap JavaScript File -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
-        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <!-- JavaScript File -->
     <script src="./Assets/scripts/script.js"></script>
 
 </body>
-
 </html>
