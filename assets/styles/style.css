@@ -81,7 +81,7 @@ p.Date {
 
 .Form-Instructions {
     padding: 5px;
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
 }
 
@@ -90,10 +90,13 @@ p.Date {
     padding: 20px;
     margin: 10px;
     border-radius: 15px;
+    box-shadow: 10px 5px 5px grey;
 }
 
 .exerciseButton {
+transitionButtons
     background-color: lightskyblue;
+
     border-radius: .5em;
     border: none;
     color: black;
@@ -111,6 +114,7 @@ p.Date {
     flex-direction: column;
     color: black;
     text-align: center;
+transitionButtons
     padding: 0;
     cursor: pointer;
 }
