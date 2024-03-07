@@ -94,10 +94,12 @@ p.Date {
 }
 
 .exerciseButton {
-    background-color: lightslategray;
+transitionButtons
+    background-color: lightskyblue;
+
     border-radius: .5em;
     border: none;
-    color: white;
+    color: black;
     font-size: 35px;
     padding-left: 15px;
     padding-right: 15px;
@@ -112,7 +114,8 @@ p.Date {
     flex-direction: column;
     color: black;
     text-align: center;
-    padding: 15px;
+transitionButtons
+    padding: 0;
     cursor: pointer;
 }
 
@@ -124,7 +127,7 @@ p.Date {
 }
 
 .workoutChoices li:hover {
-    background: lightgrey;
+    background: lightgray
 }
 
 .exerciseButton:hover+.workoutChoices {
