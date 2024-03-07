@@ -93,10 +93,10 @@ p.Date {
 }
 
 .exerciseButton {
-    background-color: black;
+    background-color: lightskyblue;
     border-radius: .5em;
     border: none;
-    color: white;
+    color: black;
     font-size: 35px;
     padding-left: 15px;
     padding-right: 15px;
@@ -109,16 +109,16 @@ p.Date {
     visibility: hidden;
     display: flex;
     flex-direction: column;
-    color: white;
+    color: black;
     text-align: center;
     padding: 0;
 }
 
 .workoutChoices li {
-    background: grey;
+    background: lightcyan;
     border-radius: .5em;
     margin-bottom: 5px;
-    
+    transition-delay: calc(50ms * var(--delay));
 }
 
 .exerciseButton:hover+.workoutChoices {
