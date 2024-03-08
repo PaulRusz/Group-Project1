@@ -6,6 +6,9 @@ var userInput = document.getElementById('userInput');
 var workoutPage = document.getElementById('Workout-Page');
 var welcomeMessage = document.getElementById('Welcome');
 
+var previousArrow = document.getElementById ("cal-prev");
+var nextArrow = document.getElementById("cal-next")
+
 // Check if User Name is Already Stored in Local Storage
 var userName = localStorage.getItem('userName');
 
@@ -158,4 +161,7 @@ function updateMonthUI(month) {
     // Update the UI element with the month name
     document.getElementById('monthDisplay').textContent = monthName;
 }
+
+previousArrow.addEventListener("click", showPreviousMonth );
+nextArrow.addEventListener("click", showNextMonth);
 
