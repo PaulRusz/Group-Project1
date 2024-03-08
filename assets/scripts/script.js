@@ -47,8 +47,7 @@ if (userName) {
 var quote = 'https://api.quotable.io/random';
 var options = {method: 'GET', headers: {Accept: 'application/json'}};
 
-// Fetch Quote Function
-// Fetch Quote
+// Fetch Quote From Quotable API
 $(document).ready(function() {
     $.ajax({
         url: 'https://api.quotable.io/random',
@@ -62,6 +61,109 @@ $(document).ready(function() {
         }
     });
 });
+
+// WGER API
+
+// Variables
+var exerciseAb = document.getElementById('exerciseCategoryAb');
+var exerciseArms = document.getElementById('exerciseCategoryArms');
+var exerciseBack = document.getElementById('exerciseCategoryBack');
+var exerciseCardio = document.getElementById('exerciseCategoryCardio');
+var exerciseLowerBody = document.getElementById('exerciseCategoryLowerBody');
+var exerciseUpperBody = document.getElementById('exerciseCategoryUpperBody');
+// Insert Workout Planner Exercise Element Variable
+// <---------->
+//var wgerExercises = 'https://wger.de/api/v2/exercise.api/';
+//var options = {method: 'GET', headers: {Accept: 'application/json'}};
+// JSON Object Containing API Endpoints
+var wgerEndpoints = {
+    'exercise': 'https://wger.de/api/v2/exercise/?limit=100&language=2&category=10',
+    'exercisecategory': 'https://wger.de/api/v2/exercisecategory/',
+    'exerciseimage': 'https://wger.de/api/v2/exerciseimage/',
+    'exerciseinfo': 'https://wger.de/api/v2/exerciseinfo/'
+};
+// Fetch WGER Data Endpoints
+function fetchExercises() {
+    fetchDataFromEndpoint('exercise');
+    console.log()
+}
+// var exercises = fetchDataFromEndpoint('exercise');
+// var exerciseCategories = fetchDataFromEndpoint('exercisecategory');
+// var exerciseImages = fetchDataFromEndpoint('exerciseimage');
+// var exerciseInfo = fetchDataFromEndpoint('exerciseinfo');
+
+// Fetch Data From a Specific Endpoint
+function fetchDataFromEndpoint(endpointKey) {
+    var endpoint = wgerEndpoints[endpointKey];
+    $.ajax({
+        url: endpoint,
+        type: 'GET',
+        success: function(response) {
+            console.log(`Data from ${endpointKey} endpoint:`, response);
+            // Log Exercises in the Console
+            if (endpointKey === 'exercise') {
+                console.log('Exercises:', response.results);
+                // Store Fetched Data in Corresponding Variables
+            if (endpointKey === 'exercise') {
+                exercises = response.results;
+            } else if (endpointKey === 'exercisecategory') {
+                exerciseCategories = response.results;
+            } else if (endpointKey === 'exerciseimage') {
+                exerciseImages = response.results;
+            } else if (endpointKey === 'exerciseinfo') {
+                exerciseInfo = response.results;
+            }
+            };
+        },
+        error: function(xhr, status, error) {
+            console.error(`Error fetching data from ${endpointKey} endpoint:`, error);
+        }
+    });
+};
+
+// Run Console Log Function to Ensure API Works
+fetchExercises();
+fetch("https://wger.de/api/v2/exercisecategory/").then(function(resp){return resp.json()}).then(function(data){console.log(data)})
+// Variables to store fetched data
+// var exercises, exerciseCategories, exerciseImages, exerciseInfo;
+
+// // Fetch WGER Data Endpoints
+// function fetchExercises() {
+//     fetchDataFromEndpoint('exercise');
+//     fetchDataFromEndpoint('exercisecategory');
+//     fetchDataFromEndpoint('exerciseimage');
+//     fetchDataFromEndpoint('exerciseinfo');
+// }
+
+// Fetch Data From a Specific Endpoint
+
+            // Store the fetched data in the corresponding variables
+//             if (endpointKey === 'exercise') {
+//                 exercises = response.results;
+//             } else if (endpointKey === 'exercisecategory') {
+//                 exerciseCategories = response.results;
+//             } else if (endpointKey === 'exerciseimage') {
+//                 exerciseImages = response.results;
+//             } else if (endpointKey === 'exerciseinfo') {
+//                 exerciseInfo = response.results;
+//             }
+//         },
+//         error: function(xhr, status, error) {
+//             console.error(`Error fetching data from ${endpointKey} endpoint:`, error);
+//             // Handle any errors that occur during the request
+//         }
+//     });
+// }
+
+// Exercise Categories (Our Workout Choices Versus API's Exercise Categories)
+    // Complete Arms Workout (exerciseArms) = Arms
+    // Lower Body Workout (exerciseLowerBody) = Calves, Legs
+    // Upper Body Workout (exerciseUpperBody) = Chest
+    // Back & Shoulder Workout (exerciseBack) = Back, Shoulders
+    // Ab Workout (exerciseAb) = Abs
+    // Cardio Workout (exerciseCardio) = Cardio
+
+
 
 // Display Date & Time
 
