@@ -73,15 +73,15 @@ var exerciseUpperBody = document.getElementById('exerciseCategoryUpperBody');
 //var options = {method: 'GET', headers: {Accept: 'application/json'}};
 // JSON Object Containing API Endpoints
 var wgerEndpoints = {
-    'exercise': 'https://wger.de/api/v2/exercise/?limit=100&language=2&category=10',
-    'exercisecategory': 'https://wger.de/api/v2/exercisecategory/',
-    'exerciseimage': 'https://wger.de/api/v2/exerciseimage/',
-    'exerciseinfo': 'https://wger.de/api/v2/exerciseinfo/'
+    'exercise': 'https://wger.de/api/v2/exercise/?limit=100&language=2',
+    'exercisecategory': 'https://wger.de/api/v2/exercisecategory/?',
+    'exerciseimage': 'https://wger.de/api/v2/exerciseimage/?',
+    'exerciseinfo': 'https://wger.de/api/v2/exerciseinfo/?'
 };
 // Fetch WGER Data Endpoints
 function fetchExercises() {
-    fetchDataFromEndpoint('exercise');
-    console.log()
+    return fetchDataFromEndpoint('exercise');
+
 }
 // var exercises = fetchDataFromEndpoint('exercise');
 // var exerciseCategories = fetchDataFromEndpoint('exercisecategory');
@@ -89,67 +89,22 @@ function fetchExercises() {
 // var exerciseInfo = fetchDataFromEndpoint('exerciseinfo');
 
 // Fetch Data From a Specific Endpoint
-function fetchDataFromEndpoint(endpointKey) {
+function fetchDataFromEndpoint(endpointKey, params) {
     var endpoint = wgerEndpoints[endpointKey];
-    $.ajax({
-        url: endpoint,
-        type: 'GET',
-        success: function (response) {
-            console.log(`Data from ${endpointKey} endpoint:`, response);
-            // Log Exercises in the Console
-            if (endpointKey === 'exercise') {
-                console.log('Exercises:', response.results);
-                // Store Fetched Data in Corresponding Variables
-                if (endpointKey === 'exercise') {
-                    exercises = response.results;
-                } else if (endpointKey === 'exercisecategory') {
-                    exerciseCategories = response.results;
-                } else if (endpointKey === 'exerciseimage') {
-                    exerciseImages = response.results;
-                } else if (endpointKey === 'exerciseinfo') {
-                    exerciseInfo = response.results;
-                }
-            };
-        },
-        error: function (xhr, status, error) {
-            console.error(`Error fetching data from ${endpointKey} endpoint:`, error);
-        }
-    });
+    if (params) {
+        endpoint += "&" + params
+    }
+    return fetch(endpoint)
+        .then(function (resp) { return resp.json() })
 };
 
 // Run Console Log Function to Ensure API Works
-fetchExercises();
-fetch("https://wger.de/api/v2/exercisecategory/").then(function (resp) { return resp.json() }).then(function (data) { console.log(data) })
+fetchExercises().then(function (data) { console.log(data) })
+fetch("https://wger.de/api/v2/exercisecategory/")
+    .then(function (resp) { return resp.json() })
+    .then(function (data) { console.log(data) })
 // Variables to store fetched data
 // var exercises, exerciseCategories, exerciseImages, exerciseInfo;
-
-// // Fetch WGER Data Endpoints
-// function fetchExercises() {
-//     fetchDataFromEndpoint('exercise');
-//     fetchDataFromEndpoint('exercisecategory');
-//     fetchDataFromEndpoint('exerciseimage');
-//     fetchDataFromEndpoint('exerciseinfo');
-// }
-
-// Fetch Data From a Specific Endpoint
-
-// Store the fetched data in the corresponding variables
-//             if (endpointKey === 'exercise') {
-//                 exercises = response.results;
-//             } else if (endpointKey === 'exercisecategory') {
-//                 exerciseCategories = response.results;
-//             } else if (endpointKey === 'exerciseimage') {
-//                 exerciseImages = response.results;
-//             } else if (endpointKey === 'exerciseinfo') {
-//                 exerciseInfo = response.results;
-//             }
-//         },
-//         error: function(xhr, status, error) {
-//             console.error(`Error fetching data from ${endpointKey} endpoint:`, error);
-//             // Handle any errors that occur during the request
-//         }
-//     });
-// }
 
 // Exercise Categories (Our Workout Choices Versus API's Exercise Categories)
 // Complete Arms Workout (exerciseArms) = Arms
@@ -183,9 +138,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const exerciseButtons = document.querySelectorAll('.workoutChoices li');
     const selectForm = document.querySelector('.selectForm');
     const checkboxContainer = document.querySelector('.checkboxContainer');
+    const exerciseList = document.querySelector("#exercise");
+    const exerciseHeadingButton = document.querySelector('.Checkbox-Heading');
+
+    console.log(exerciseHeadingButton); // Check if exerciseHeadingButton is selected correctly
+
+    exerciseHeadingButton.addEventListener('click', function () {
+        console.log("Exercise heading button clicked.");
+
+        // Show the select form
+        selectForm.style.display = 'block';
+
+        // Hide the exercise list
+        checkboxContainer.style.display = 'none';
+    });
 
     exerciseButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
+        button.addEventListener('click', function (event) {
+            console.log(event.target.dataset.category);
+
             // Hide the list items
             document.querySelector('.workoutChoices').style.visibility = 'hidden';
 
@@ -195,6 +166,28 @@ document.addEventListener("DOMContentLoaded", function () {
             // Adjust layout to make checkbox container take the spot of the list items
             selectForm.style.display = 'none'; // Hide the select form
             checkboxContainer.style.display = 'block'; // Show the checkbox container
+
+            fetchDataFromEndpoint("exercise", "category=" + event.target.dataset.category)
+                .then(function (response) {
+                    var exercises = response.results;
+                    console.log(exercises);
+
+                    for (let i = 0; i < exercises.length; i += 1) {
+                        var exercise = exercises[i];
+                        console.log(exercise);
+
+                        var exerciseListItem = document.createElement("li");
+                        var exerciseListItemBox = document.createElement("input");
+                        exerciseListItemBox.setAttribute("type", "checkbox"); // Set the type attribute for the checkbox
+                        exerciseListItemBox.setAttribute("value", exercise.name); // Set the value attribute for the checkbox
+                        exerciseListItem.appendChild(exerciseListItemBox); // Append the checkbox to the list item
+
+                        var exerciseName = document.createTextNode(exercise.name); // Create a text node for the exercise name
+                        exerciseListItem.appendChild(exerciseName); // Append the exercise name to the list item
+
+                        exerciseList.appendChild(exerciseListItem); // Append the list item to the exercise list
+                    }
+                });
         });
     });
 });
