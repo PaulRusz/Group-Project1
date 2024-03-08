@@ -159,9 +159,12 @@ function updateMonthUI(month) {
     const monthName = months[month];
     
     // Update the UI element with the month name
-    document.getElementById('monthDisplay').textContent = monthName;
+    document.getElementById('monthDisplay').textContent = monthName + ' ' + 2024;
 }
 
 previousArrow.addEventListener("click", showPreviousMonth );
 nextArrow.addEventListener("click", showNextMonth);
 
+//function updateYearUI(year) {
+    //const year = ['2024', '2025', '2026', '2027']
+//}
