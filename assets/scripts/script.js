@@ -187,6 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         exerciseList.appendChild(exerciseListItem); // Append the list item to the exercise list
                     }
+
                 });
         });
     });
@@ -241,5 +242,30 @@ const calendarFunction = () => {
     calendarCurrentDate.innerText = `${months[calendarMonth]} ${calendarYear}`;
     calendarDay.innerHTML = lit;
 }
-
 calendarFunction();
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Your existing code here...
+
+    // Navigation buttons event listeners
+    const prevButton = document.getElementById('cal-prev');
+    const nextButton = document.getElementById('cal-next');
+
+    prevButton.addEventListener('click', function () {
+        calendarMonth--; // Decrease the month by 1
+        if (calendarMonth < 0) {
+            calendarMonth = 11; // If the month goes below January, set it to December
+            calendarYear--; // Decrease the year
+        }
+        calendarFunction(); // Update the calendar display
+    });
+
+    nextButton.addEventListener('click', function () {
+        calendarMonth++; // Increase the month by 1
+        if (calendarMonth > 11) {
+            calendarMonth = 0; // If the month goes above December, set it to January
+            calendarYear++; // Increase the year
+        }
+        calendarFunction(); // Update the calendar display
+    });
+})
