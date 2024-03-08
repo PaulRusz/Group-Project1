@@ -96,8 +96,7 @@ p.Date {
 .exerciseButton {
     background-color: lightskyblue;
     border-radius: .5em;
-    border: none;
-    color: black;
+    border: black black;
     font-size: 35px;
     padding-left: 15px;
     padding-right: 15px;
@@ -131,6 +130,30 @@ p.Date {
 
 .exerciseButton:hover+.workoutChoices {
     visibility: visible;
+}
+
+/* Exercise Checkbox Display */
+.checkboxContainer {
+    text-align: center;
+    background-color: lightblue;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px grey;
+    visibility: hidden;
+    position: absolute;
+    z-index: -1;
+    /* Move the checkboxContainer behind other elements*/
+}
+
+.Checkbox-Heading {
+    display: initial;
+    text-align: center;
+    font-size: 35px;
+    background-color: lightskyblue;
+    border-radius: .5em;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 5px;
+    border-style: double;
 }
 
 /* Calendar Display */

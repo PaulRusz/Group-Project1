@@ -45,18 +45,15 @@ if (userName) {
 
 // Variables
 var quote = 'https://api.quotable.io/random';
-var options = {method: 'GET', headers: {Accept: 'application/json'}};
-
-// Fetch Quote From Quotable API
-$(document).ready(function() {
+var options = { method: 'GET', headers: { Accept: 'application/json' } };
     $.ajax({
         url: 'https://api.quotable.io/random',
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             var quote = data.content;
             $('#Quote').text('"' + quote + '"');
         },
-        error: function() {
+        error: function () {
             $('#Quote').text("Your self-worth is determined by you. You don't have to depend on someone telling you who you are.");
         }
     });
@@ -180,8 +177,30 @@ var exeButton = $(".exerciseButton").on("click", function () {
     $(".workoutChoices").css("visibility", "visible")
 })
 
-// Display Calendar
+// Checkbox items are initially hidden but appear after a workout choice is made 
+// using the workoutchoices menu
 
+document.addEventListener("DOMContentLoaded", function () {
+    const exerciseButtons = document.querySelectorAll('.workoutChoices li');
+    const selectForm = document.querySelector('.selectForm');
+    const checkboxContainer = document.querySelector('.checkboxContainer');
+
+    exerciseButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            // Hide the list items
+            document.querySelector('.workoutChoices').style.visibility = 'hidden';
+
+            // Show the checkbox container
+            checkboxContainer.style.visibility = 'visible';
+
+            // Adjust layout to make checkbox container take the spot of the list items
+            selectForm.style.display = 'none'; // Hide the select form
+            checkboxContainer.style.display = 'block'; // Show the checkbox container
+        });
+    });
+});
+
+// Display Calendar
 // Variables
 var date = new Date();
 var calendarYear = date.getFullYear();
