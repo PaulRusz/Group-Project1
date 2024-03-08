@@ -130,3 +130,32 @@ const calendarFunction = () => {
 }
 
 calendarFunction();
+
+// Initialize the current month variable to the current month 
+let currentMonth = new Date().getMonth();
+
+// Function to show the previous month
+function showPreviousMonth() {
+    // Calculate the previous month and handle wrapping around to the previous year
+    currentMonth = (currentMonth - 1 + 12) % 12; 
+    updateMonthUI(currentMonth);
+    console.log('Showing previous month:', currentMonth);
+}
+
+// Function to show the next month
+function showNextMonth() {
+
+    // Calculate the next month and handle wrapping around to the next year
+    currentMonth = (currentMonth + 1) % 12; 
+    updateMonthUI(currentMonth);
+    console.log('Showing next month:', currentMonth);
+}
+// Function to update the UI with the month name
+function updateMonthUI(month) {
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const monthName = months[month];
+    
+    // Update the UI element with the month name
+    document.getElementById('monthDisplay').textContent = monthName;
+}
+
