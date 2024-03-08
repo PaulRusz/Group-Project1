@@ -46,17 +46,16 @@ if (userName) {
 // Variables
 var quote = 'https://api.quotable.io/random';
 var options = { method: 'GET', headers: { Accept: 'application/json' } };
-    $.ajax({
-        url: 'https://api.quotable.io/random',
-        dataType: 'json',
-        success: function (data) {
-            var quote = data.content;
-            $('#Quote').text('"' + quote + '"');
-        },
-        error: function () {
-            $('#Quote').text("Your self-worth is determined by you. You don't have to depend on someone telling you who you are.");
-        }
-    });
+$.ajax({
+    url: 'https://api.quotable.io/random',
+    dataType: 'json',
+    success: function (data) {
+        var quote = data.content;
+        $('#Quote').text('"' + quote + '"');
+    },
+    error: function () {
+        $('#Quote').text("Your self-worth is determined by you. You don't have to depend on someone telling you who you are.");
+    }
 });
 
 // WGER API
@@ -95,24 +94,24 @@ function fetchDataFromEndpoint(endpointKey) {
     $.ajax({
         url: endpoint,
         type: 'GET',
-        success: function(response) {
+        success: function (response) {
             console.log(`Data from ${endpointKey} endpoint:`, response);
             // Log Exercises in the Console
             if (endpointKey === 'exercise') {
                 console.log('Exercises:', response.results);
                 // Store Fetched Data in Corresponding Variables
-            if (endpointKey === 'exercise') {
-                exercises = response.results;
-            } else if (endpointKey === 'exercisecategory') {
-                exerciseCategories = response.results;
-            } else if (endpointKey === 'exerciseimage') {
-                exerciseImages = response.results;
-            } else if (endpointKey === 'exerciseinfo') {
-                exerciseInfo = response.results;
-            }
+                if (endpointKey === 'exercise') {
+                    exercises = response.results;
+                } else if (endpointKey === 'exercisecategory') {
+                    exerciseCategories = response.results;
+                } else if (endpointKey === 'exerciseimage') {
+                    exerciseImages = response.results;
+                } else if (endpointKey === 'exerciseinfo') {
+                    exerciseInfo = response.results;
+                }
             };
         },
-        error: function(xhr, status, error) {
+        error: function (xhr, status, error) {
             console.error(`Error fetching data from ${endpointKey} endpoint:`, error);
         }
     });
@@ -120,7 +119,7 @@ function fetchDataFromEndpoint(endpointKey) {
 
 // Run Console Log Function to Ensure API Works
 fetchExercises();
-fetch("https://wger.de/api/v2/exercisecategory/").then(function(resp){return resp.json()}).then(function(data){console.log(data)})
+fetch("https://wger.de/api/v2/exercisecategory/").then(function (resp) { return resp.json() }).then(function (data) { console.log(data) })
 // Variables to store fetched data
 // var exercises, exerciseCategories, exerciseImages, exerciseInfo;
 
@@ -134,7 +133,7 @@ fetch("https://wger.de/api/v2/exercisecategory/").then(function(resp){return res
 
 // Fetch Data From a Specific Endpoint
 
-            // Store the fetched data in the corresponding variables
+// Store the fetched data in the corresponding variables
 //             if (endpointKey === 'exercise') {
 //                 exercises = response.results;
 //             } else if (endpointKey === 'exercisecategory') {
@@ -153,12 +152,12 @@ fetch("https://wger.de/api/v2/exercisecategory/").then(function(resp){return res
 // }
 
 // Exercise Categories (Our Workout Choices Versus API's Exercise Categories)
-    // Complete Arms Workout (exerciseArms) = Arms
-    // Lower Body Workout (exerciseLowerBody) = Calves, Legs
-    // Upper Body Workout (exerciseUpperBody) = Chest
-    // Back & Shoulder Workout (exerciseBack) = Back, Shoulders
-    // Ab Workout (exerciseAb) = Abs
-    // Cardio Workout (exerciseCardio) = Cardio
+// Complete Arms Workout (exerciseArms) = Arms
+// Lower Body Workout (exerciseLowerBody) = Calves, Legs
+// Upper Body Workout (exerciseUpperBody) = Chest
+// Back & Shoulder Workout (exerciseBack) = Back, Shoulders
+// Ab Workout (exerciseAb) = Abs
+// Cardio Workout (exerciseCardio) = Cardio
 
 
 
