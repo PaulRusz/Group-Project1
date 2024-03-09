@@ -20,24 +20,24 @@ if (userName) {
     // Show the Welcome Message
     welcomeMessage.style.display = 'block';
 
-// Function to Submit User Name for the First Time
+    // Function to Submit User Name for the First Time
 } else {
     // Add Event Listener to Form
     userInput.addEventListener('submit', function (event) {
-    // Prevent Form Submission
-    event.preventDefault();
-    // Retrieve Input Value From Form Field
-    var userName = document.getElementById('User-Name').value;
-    // Update Text Content of Header with the User's Name
-    header.textContent = `${userName}'s Workout Tracker`;
-    // Save the User's Name to Local Storage
-    localStorage.setItem('userName', userName);
-    // Show the Workout Page Divider
-    workoutPage.style.display = 'block';
-    // Hide User Name Form Once Submitted
-    userInput.style.display = 'none';
-    // Hide the Welcome Message
-    welcomeMessage.style.display = 'none';
+        // Prevent Form Submission
+        event.preventDefault();
+        // Retrieve Input Value From Form Field
+        var userName = document.getElementById('User-Name').value;
+        // Update Text Content of Header with the User's Name
+        header.textContent = `${userName}'s Workout Tracker`;
+        // Save the User's Name to Local Storage
+        localStorage.setItem('userName', userName);
+        // Show the Workout Page Divider
+        workoutPage.style.display = 'block';
+        // Hide User Name Form Once Submitted
+        userInput.style.display = 'none';
+        // Hide the Welcome Message
+        welcomeMessage.style.display = 'none';
     });
 };
 
@@ -104,6 +104,8 @@ var exeButton = $(".exerciseButton").on("click", function () {
     $(".workoutChoices").css("visibility", "visible")
 });
 
+
+
 // Checkbox Items Appear After a Workout Choice is Made Using WorkoutChoices Menu
 document.addEventListener("DOMContentLoaded", function () {
     const exerciseButtons = document.querySelectorAll('.workoutChoices li');
@@ -159,6 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
 
 // Display Calendar
 
@@ -227,3 +230,13 @@ nextButton.addEventListener('click', function () {
     calendarFunction(); // Update Calendar Display
 });
 calendarFunction();
+
+// Allows a user to select an exercise and then use the 'Exercise' Button to go
+// back to the Exercise Types
+const checkboxHeadingButton = document.getElementById('checkbox-heading-button')
+const selectForm = document.getElementById('select-form')
+
+checkboxHeadingButton.addEventListener('click', () => {
+    selectForm.scrollIntoView({ behavior: 'smooth' })
+})
+
