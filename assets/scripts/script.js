@@ -48,22 +48,17 @@ if (userName) {
 
 // Variables
 var quote = 'https://api.quotable.io/random';
-var options = {method: 'GET', headers: {Accept: 'application/json'}};
-
-// Fetch Quote Function
-// Fetch Quote
-$(document).ready(function() {
-    $.ajax({
-        url: 'https://api.quotable.io/random',
-        dataType: 'json',
-        success: function(data) {
-            var quote = data.content;
-            $('#Quote').text('"' + quote + '"');
-        },
-        error: function() {
-            $('#Quote').text("Your self-worth is determined by you. You don't have to depend on someone telling you who you are.");
-        }
-    });
+var options = { method: 'GET', headers: { Accept: 'application/json' } };
+$.ajax({
+    url: 'https://api.quotable.io/random',
+    dataType: 'json',
+    success: function (data) {
+        var quote = data.content;
+        $('#Quote').text('"' + quote + '"');
+    },
+    error: function () {
+        $('#Quote').text("Your self-worth is determined by you. You don't have to depend on someone telling you who you are.");
+    }
 });
 
 // Display Date & Time
@@ -72,14 +67,104 @@ $(document).ready(function() {
 var currentDate = dayjs().format('dddd, MMMM D, YYYY, h:mm a');
 var currentTime = dayjs().hour();
 
-// Sets date & time into dashboard header area
-console.log(currentTime)
-$('#currentDate').html(currentDate)
+// Sets Date & Time In Dashboard Header Area
+console.log(currentTime);
+$('#currentDate').html(currentDate);
 
-// Function to have the workout choices appear
+// WGER API
+
+// JSON Object Containing API Endpoints
+var wgerEndpoints = {
+    'exercise': 'https://wger.de/api/v2/exercise/?limit=100&language=2',
+    'exercisecategory': 'https://wger.de/api/v2/exercisecategory/?',
+    'exerciseimage': 'https://wger.de/api/v2/exerciseimage/?',
+    'exerciseinfo': 'https://wger.de/api/v2/exerciseinfo/?'
+};
+
+// Fetch WGER Data Endpoints
+function fetchExercises() {
+    return fetchDataFromEndpoint('exercise');
+};
+
+// Fetch Data From a Specific Endpoint
+function fetchDataFromEndpoint(endpointKey, params) {
+    var endpoint = wgerEndpoints[endpointKey];
+    if (params) {
+        endpoint += "&" + params;
+    }
+    return fetch(endpoint)
+        .then(function (resp) { return resp.json() });
+};
+
+// Run Console Log Function to Ensure API Works
+fetchExercises().then(function (data) { console.log(data) });
+fetch("https://wger.de/api/v2/exercisecategory/")
+    .then(function (resp) { return resp.json(); })
+    .then(function (data) { console.log(data); });
+
+// Display Workout Choices
 var exeButton = $(".exerciseButton").on("click", function () {
     $(".workoutChoices").css("visibility", "visible")
-})
+});
+
+
+
+// Checkbox Items Appear After a Workout Choice is Made Using WorkoutChoices Menu
+document.addEventListener("DOMContentLoaded", function () {
+    const exerciseButtons = document.querySelectorAll('.workoutChoices li');
+    const selectForm = document.querySelector('.selectForm');
+    const checkboxContainer = document.querySelector('.checkboxContainer');
+    const exerciseList = document.querySelector("#exercise");
+    const exerciseHeadingButton = document.querySelector('.Checkbox-Heading');
+    const formInstructions = document.querySelector('.Form-Instructions');
+    // Run Console Log Function to Ensure ExerciseHeadingButton is Selected Correctly
+    console.log(exerciseHeadingButton);
+    exerciseHeadingButton.addEventListener('click', function () {
+        console.log("Exercise heading button clicked.");
+        // Show the Select Form
+        selectForm.style.display = 'block';
+        // Hide the Exercise List
+        checkboxContainer.style.display = 'none';
+    });
+    exerciseButtons.forEach(function (button) {
+        button.addEventListener('click', function (event) {
+            console.log(event.target.dataset.category);
+            // Hide the Workout Types List
+            document.querySelector('.workoutChoices').style.visibility = 'hidden';
+            // Show the Checkbox Container
+            checkboxContainer.style.visibility = 'visible';
+            // Hide Select Form
+            selectForm.style.display = 'none';
+            // Show Checkbox Container
+            checkboxContainer.style.display = 'block';
+            // Populate Checkbox Container With Relevant Workouts
+            fetchDataFromEndpoint("exercise", "category=" + event.target.dataset.category)
+                .then(function (response) {
+                    var exercises = response.results;
+                    console.log(exercises);
+
+                    for (let i = 0; i < exercises.length; i += 1) {
+                        var exercise = exercises[i];
+                        console.log(exercise);
+
+                        var exerciseListItem = document.createElement("li");
+                        var exerciseListItemBox = document.createElement("input");
+                        exerciseListItemBox.setAttribute("type", "checkbox"); // Set the type attribute for the checkbox
+                        exerciseListItemBox.setAttribute("value", exercise.name); // Set the value attribute for the checkbox
+                        exerciseListItem.appendChild(exerciseListItemBox); // Append the checkbox to the list item
+
+                        var exerciseName = document.createTextNode(exercise.name); // Create a text node for the exercise name
+                        exerciseListItem.appendChild(exerciseName); // Append the exercise name to the list item
+
+                        exerciseList.appendChild(exerciseListItem); // Append the list item to the exercise list
+                    }
+                    // Hide Form Instructions Once the Checkbox Items Have Appeared
+                    formInstructions.style.display = 'none';
+                });
+        });
+    });
+});
+
 
 // Display Calendar
 
@@ -91,30 +176,28 @@ var calendarDay = document.querySelector('.cal-dates');
 var calendarCurrentDate = document.querySelector('.cal-current-date');
 var calendarIcons = document.querySelector('.cal-nav span');
 
-// An array for the months
+// Months Array
 const months = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
 ];
 
-// Shows calendar
+// Show Calendar
 const calendarFunction = () => {
-    // Obtains the first day of the new month
+    // Obtain First Day of the New Month
     var dayOne = new Date(calendarYear, calendarMonth, 1).getDay();
-    // Obtains the last day of the new month
+    // Obtain Last Day of the New Month
     var lastDay = new Date(calendarYear, calendarMonth + 1, 0).getDate();
-    // Obtains the day name of the last day in the month
+    // Obtain Day Name of the Last Day in the Month
     var lastDayName = new Date(calendarYear, calendarMonth, lastDay).getDay();
-    // Obtains the last date of the previous month
+    // Obtain Last Date of the Previous Month
     var monthLastDate = new Date(calendarYear, calendarMonth, 0).getDate();
     var lit = "";
-
-    // Add the last dates of the previous month
+    // Add Last Dates of the Previous Month
     for (let i = dayOne; i > 0; i--) {
         lit += `<li class="inactive">${monthLastDate - i}</li>`;
-    }
-
-    // Add the dates of the current month
+    };
+    // Add Dates of the Current Month
     for (let i = 1; i <= lastDay; i++) {
         var isToday = i === date.getDate()
             && calendarMonth === new Date().getMonth()
@@ -122,49 +205,41 @@ const calendarFunction = () => {
             ? "active"
             : "";
         lit += `<li class="${isToday}">${i}</li>`;
-    }
-
+    };
     for (let i = lastDayName; i < 6; i++) {
         lit += `<li class="inactive">${i - lastDayName + 1}</li>`;
-    }
-
+    };
     calendarCurrentDate.innerText = `${months[calendarMonth]} ${calendarYear}`;
     calendarDay.innerHTML = lit;
-}
+};
 
+// Navigation Buttons Event Listeners
+const prevButton = document.getElementById('cal-prev');
+const nextButton = document.getElementById('cal-next');
+prevButton.addEventListener('click', function () {
+    calendarMonth--; // Decrease Month By 1
+    if (calendarMonth < 0) {
+        calendarMonth = 11; // If the Month Goes Below January, Set it to December
+        calendarYear--; // Decrease Year
+    };
+    calendarFunction(); // Update Calendar Display
+});
+nextButton.addEventListener('click', function () {
+    calendarMonth++; // Increase Month By 1
+    if (calendarMonth > 11) {
+        calendarMonth = 0; // If the Month Goes Above December, Set it to January
+        calendarYear++; // Increase Year
+    };
+    calendarFunction(); // Update Calendar Display
+});
 calendarFunction();
 
-// Initialize the current month variable to the current month 
-let currentMonth = new Date().getMonth();
+// Allows a user to select an exercise and then use the 'Exercise' Button to go
+// back to the Exercise Types
+const checkboxHeadingButton = document.getElementById('checkbox-heading-button')
+const selectForm = document.getElementById('select-form')
 
-// Function to show the previous month
-function showPreviousMonth() {
-    // Calculate the previous month and handle wrapping around to the previous year
-    currentMonth = (currentMonth - 1 + 12) % 12; 
-    updateMonthUI(currentMonth);
-    console.log('Showing previous month:', currentMonth);
-}
+checkboxHeadingButton.addEventListener('click', () => {
+    selectForm.scrollIntoView({ behavior: 'smooth' })
+})
 
-// Function to show the next month
-function showNextMonth() {
-
-    // Calculate the next month and handle wrapping around to the next year
-    currentMonth = (currentMonth + 1) % 12; 
-    updateMonthUI(currentMonth);
-    console.log('Showing next month:', currentMonth);
-}
-// Function to update the UI with the month name
-function updateMonthUI(month) {
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    const monthName = months[month];
-    
-    // Update the UI element with the month name
-    document.getElementById('monthDisplay').textContent = monthName + ' ' + 2024;
-}
-
-previousArrow.addEventListener("click", showPreviousMonth );
-nextArrow.addEventListener("click", showNextMonth);
-
-//function updateYearUI(year) {
-    //const year = ['2024', '2025', '2026', '2027']
-//}

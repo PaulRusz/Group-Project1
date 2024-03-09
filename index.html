@@ -40,66 +40,87 @@
         <!-- Quotable API Random Quote -->
         <p id="Quote"></p>
         <hr>
-        <!-- Main Content Container (Date, Form, Calendar) -->
         <main>
-            <!-- Form Container -->
-            <div class="Form-Content">
-                <!-- Date Container -->
-                <div class="Date">
-                    <p class="Date"><strong>Today's Date:</strong></p>
-                    <p id="currentDate"></p>
-                </div>
-                <!-- Form Container -->
-                <p class="Form-Instructions">What type of workouts would you like to complete today?</p>
-                <div class="selectForm">
-                    <button class="exerciseButton">Choose an Exercise Type</button><br>
-                    <ul class="workoutChoices" style="visibility: hidden;">
-                        <li style="--delay: 1;">Complete Arm Workout</li>
-                        <li style="--delay: 2;">Lower Body Workout</li>
-                        <li style="--delay: 3;">Upper Body Workout</li>
-                        <li style="--delay: 4;">Back Workout</li>
-                        <li style="--delay: 5;">Ab Workout</li>
-                        <li style="--delay: 6;">Cardio Workout</li>
-                        <li style="--delay: 7;">Rest Day</li>
-                    </ul>
-                </div>
+            <!-- Date Container -->
+            <div class="Date">
+                <p class="Date"><strong>Today's Date:</strong></p>
+                <p id="currentDate"></p>
             </div>
-            <!-- Calendar Container -->
-            <div class="cal-container">
-                <div id="calendarBox">
-                    <header class="cal-header">
-                        <p id= "monthDisplay" class="cal-current-date"></p>
-                        <div class="cal-nav">
-                            <span id="cal-prev" class="material-symbols-rounded"><img class="Calendar-Nav-Button"
-                                    src="assets/images/Previous-Arrow.svg" alt="Back-Button"></span>
-                            <span id="cal-next" class="material-symbols-rounded"><img class="Calendar-Nav-Button"
-                                    src="assets/images/Next-Arrow.svg" alt="Back-Button"></span>
-                        </div>
-                    </header>
-                    <div class="cal-body">
-                        <ul class="weekdays">
-                            <li>Sun</li>
-                            <li>Mon</li>
-                            <li>Tues</li>
-                            <li>Wed</li>
-                            <li>Thurs</li>
-                            <li>Fri</li>
-                            <li>Sat</li>
+            <!-- Form & Calendar Content Container (Date, Form, Calendar) -->
+            <div class="Display-Container">
+                <!-- Form Container -->
+                <div class="Form-Content">
+                    <!-- Form Container -->
+                    <p class="Form-Instructions">What type of workouts would you like to complete today?</p>
+                    <div class="selectForm">
+                        <button class="exerciseButton">Choose an Exercise Type</button><br>
+                        <ul class="workoutChoices" style="visibility: hidden;">
+                            <li style="--delay: 1" data-category="8">Complete Arms Workout</li>
+                            <li style="--delay: 2" data-category="9">Leg Workout</li>
+                            <li style="--delay: 2" data-category="14">Calves Workout</li>
+                            <li style="--delay: 3" data-category="11">Upper Body Workout</li>
+                            <li style="--delay: 4" data-category="12">Back Workout</li>
+                            <li style="--delay: 4" data-category="13">Shoulder Workout</li>
+                            <li style="--delay: 5" data-category="10">Ab Workout</li>
+                            <li style="--delay: 6" data-category="15">Cardio Workout</li>
+                            <li style="--delay: 7">Rest Day</li>
                         </ul>
-                        <ul class="cal-dates">
-                            <!-- Your calendar dates will go here -->
+                    </div>
+                    <!-- Exercise Checkbox Container -->
+                    <div class="checkboxContainer">
+                        <button class="Checkbox-Heading">Exercises:</button>
+                        <ul id="exercise">
                         </ul>
                     </div>
                 </div>
+                <!-- Calendar Container -->
+                <div class="cal-container">
+                    <div id="calendarBox">
+                        <header class="cal-header">
+                            <p class="cal-current-date"></p>
+                            <div class="cal-nav">
+                                <span id="cal-prev" class="material-symbols-rounded"><img class="Calendar-Nav-Button"
+                                        src="assets/images/Previous-Arrow.svg" alt="Back-Button"></span>
+                                <span id="cal-next" class="material-symbols-rounded"><img class="Calendar-Nav-Button"
+                                        src="assets/images/Next-Arrow.svg" alt="Back-Button"></span>
+                            </div>
+                        </header>
+                        <div class="cal-body">
+                            <ul class="weekdays">
+                                <li>Sun</li>
+                                <li>Mon</li>
+                                <li>Tues</li>
+                                <li>Wed</li>
+                                <li>Thurs</li>
+                                <li>Fri</li>
+                                <li>Sat</li>
+                            </ul>
+                            <ul class="cal-dates">
+                                <!-- Your calendar dates will go here -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- Workout Planner Display -->
+            <div id="workoutPlanner">
+                <!-- Update Based On User's Workout Choice Selection -->
+                <h2 id="workoutHeading">Workout Planner</h2>
+                <ul id="exerciseList">
+                    <!-- Workouts Will Populate Here -->
+                </ul>
+            </div>
+            <!-- Start Workout Button -->
+            <button id="Start-Workout">Begin Workout</button>
+            <!-- Page Footer -->
+            <footer>
+                <p id="Footer-Paragraph">Made with ♡ by Paul Ruszkay, Emily Simone, and Tania Bezerra</p>
+                <p>&copy; 2024 Paul Ruszkay, Emily Simone, and Tania Bezerra</p>
+            </footer>
         </main>
 
-        <!-- Page Footer -->
-        <footer>
-            <p id="Footer-Paragraph">Made with ♡ by Paul Ruszkay, Emily Simone, and Tania Bezerra</p>
-            <p>&copy; 2024 Paul Ruszkay, Emily Simone, and Tania Bezerra</p>
-        </footer>
     </div>
+
 
     <!-- jQuery Script Files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
