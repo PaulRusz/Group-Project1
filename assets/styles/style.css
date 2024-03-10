@@ -7,7 +7,6 @@ header {
     padding: 10px;
     background-color: #427884;
 }
-
 body {
     background-color: #8ed6ee ;
 }
@@ -16,8 +15,6 @@ body {
 h1 {
     text-align: center;
     color: #f0e6e3
-    
-
 }
 
 /* Welcome Paragraph */
@@ -35,22 +32,25 @@ h1 {
 .Submit-Button {
     display: inline-block;
     border: none;
-    background-color: white;
+    background-color: #8ed6ee;
 }
-
 .Submit-Button button {
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
-
 .Submit-Button button img {
     width: 30px;
 }
-
-.Submit-Button button:hover {
-    background-color: lightblue;
-    transition: background-color 0.3s;
+/* Main Page */
+#Workout-Page {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+}
+#mainContent {
+    padding-bottom: 10rem;
+    margin: 0;
 }
 
 /* Quote Display */
@@ -64,7 +64,6 @@ h1 {
 .Display-Container {
     display: flex;
     justify-content: center;
-    align-content: space-around;
 }
 
 /* Date & Time Display */
@@ -72,13 +71,11 @@ h1 {
     font-size: 20px;
     text-align: center;
 }
-
 p.Date {
     text-align: center;
     margin: 0;
     padding-bottom: 10px;
 }
-
 #currentDate {
     padding-bottom: 20px;
 }
@@ -89,13 +86,11 @@ p.Date {
     padding-left: 50px;
     text-align: center;
 }
-
 .Form-Instructions {
     padding: 5px;
     font-size: 19px;
     text-align: center;
 }
-
 .selectForm {
     background-color: #f0e6e3;
     padding: 20px;
@@ -104,7 +99,6 @@ p.Date {
     box-shadow: 10px 5px 5px grey;
     width: 475px;
 }
-
 .exerciseButton {
     background-color: #8ed6ee;
     border-radius: .5em;
@@ -114,7 +108,6 @@ p.Date {
     padding-right: 15px;
     margin-bottom: 5px;
 }
-
 .workoutChoices {
     list-style: none;
     font-size: 20px;
@@ -128,18 +121,15 @@ p.Date {
     cursor: pointer;
     margin: 15px
 }
-
 .workoutChoices li {
     background: lightcyan;
     border-radius: .5em;
     margin-bottom: 5px;
     transition-delay: calc(50ms * var(--delay));
 }
-
 .workoutChoices li:hover {
     background: lightgray
 }
-
 .exerciseButton:hover+.workoutChoices {
     visibility: visible;
 }
@@ -159,7 +149,6 @@ p.Date {
     padding-right: 50px;
     padding-left: 50px;
 }
-
 .Checkbox-Heading {
     display: initial;
     text-align: center;
@@ -201,14 +190,12 @@ p.Date {
     box-shadow: 10px 5px 5px grey;
     border-radius: 15px;
 }
-
 .cal-container {
     width: 500px;
     border-radius: 10px;
     margin: 10px;
     display: flex;
 }
-
 .cal-header {
     display: flex;
     padding: 10px;
@@ -216,22 +203,16 @@ p.Date {
     background-color: #8ed6ee;
     border-radius: 10px;
     border: 2px solid black;
-    font-family:Arial, Helvetica, sans-serif;
-
-    
-    
+    font-family:Arial, Helvetica, sans-serif;   
 }
-
 .weekdays {
     text-decoration: underline;
     font-weight: bold;
 }
-
 header .cal-nav {
     display: flex;
     padding-right: 15px;
 }
-
 header .cal-nav span {
     height: 35px;
     width: 35px;
@@ -242,47 +223,38 @@ header .cal-nav span {
     border-radius: 50%;
     margin-right: 10px;
 }
-
 .cal-nav span:last-child {
     margin-right: -15px;
 }
-
 header .cal-nav span:hover {
     background: white;
 }
-
 header .cal-current-date {
     font-size: 3rem;
     font-weight: 400;
 }
-
 .cal-body {
     padding: 30px;
 }
-
 .cal-body ul {
     list-style: none;
     display: flex;
     text-align: center;
     flex-wrap: wrap;
 }
-
 .cal-body .cal-dates {
     margin-bottom: 20px;
 }
-
 .cal-body li {
     width: calc(100% / 7);
     font-size: 1.5rem;
     color: black;
 }
-
 .cal-body .cal-dates li {
     margin-top: 30px;
     position: relative;
     z-index: 1;
 }
-
 .cal-dates li::before {
     position: absolute;
     content: "";
@@ -294,21 +266,15 @@ header .cal-current-date {
     transform: translate(-50%, -50%);
     z-index: -1;
 }
-
-
-
-
 .cal-dates li:not(.active):hover::before {
     background-color: lightcoral;
 }
-
 .cal-dates li.active:hover::before {
     background: greenyellow;
 }
 
 /* Workout Planner */
 #workoutPlanner {
-
     border: 5px solid #f0e6e3;
     border-radius: 10px;
     margin: 10px;
@@ -321,25 +287,22 @@ header .cal-current-date {
     color: #f0e6e3;
 }
 
-
-
 /* Footer Display */
 footer {
-    
     text-align: center;
     border: 5px solid #427884;
     border-radius: 10px;
-    margin: 10px;
     padding: 10px;
     background-color: #f0e6e3;
+    position: absolute;
+    width: 100%;
+    height: 10rem;
 }
-
 @media only screen and (max-width: 600px) {
     .container {
         width: 80%;
     }
 }
-
 #Footer-Paragraph {
     font-size: 20px;
     padding-top: 5px;
