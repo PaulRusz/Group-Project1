@@ -1,46 +1,83 @@
-# Group-Project1
+# Workout Tracker
 Group Project #1
+
+## Links
+[Link to Deployed Application](URL)
+
+[GitHub Repository](https://github.com/PaulRusz/Group-Project1)
 
 ## User Story
 ```
-As a fitness enthusiast,
-I want to create and manage my workout schedule,
-So that I can stay organized, track my progress effectively, and stay motivated with my health.
+AS A dedicated fitness enthusiast,
+I WANT an effective workout planning and progress tracking tool,
+SO THAT I can maintain a well-organized, daily-tailored fitness schedule, closely monitor my progress, and stay motivated to consistently prioritize my health.
 ```
+
 ## Acceptance Criteria
 ```
-Given a Web page to track my workouts,
-When I enter my first name,
-Then my name will appear at the top of the workout page.
-When I return to the Web page,
-Then I will not need to re-enter my first name.
-When I add a new exercise to my workout tracker,
-Then I can input the exercise's name, type, quantity (time/reps), and day of week to complete it.
-When I add information about a new exercise to my workout tracker,
-Then I can use information from the **Rest API** to add functionality to the exercise input.
-When I submit a new exercise to my workout tracker,
-Then it will display in the weekly overview table.
-When I am on the workout tracker dashboard,
-Then I will see a motivational quote from **ZenQuotes**, todays date using **Day.js**, the weekly overview table, today's exercises, and a calendar.
-When I scroll down to today's exercises,
-Then I will see two tables for today: one for exercises that I still have to do, and one for exercises that I have already completed.
-When I click the checkbox next to an exercise that I still have to do, 
-Then the row will move to the completed exercises table.
-When I scroll down to the calendar,
-Then I can access previous dates, the exercises for that day, and which exercises I did/did not complete.
+GIVEN a Workout Tracker website,
+WHEN the user visits the website for the first time,
+THEN a web page appears that allows them to input their first name to continue.
+WHEN the user submits their first name,
+THEN the H1 "Workout Tracker" will also display their name at the top of the page.
+THEN a random quote will be displayed using Quotable API.
+THEN the Exercise Form and Calendar will be displayed.
+THEN today's date and time will be displayed below the header using Day.js.
+
+WHEN the user returns to the web page,
+THEN they will be brought directly to their Workout Tracker.
+
+WHEN the user clicks on the "<" (Previous) Button in the Calendar,
+THEN the calendar will display the previous month, its dates, and the corresponding year.
+WHEN the user clicks on the ">" (Next) Button in the Calendar,
+THEN the calendar will display the next month, its dates, and the corresponding year.
+WHEN the user hovers over a past date in the Calendar,
+THEN that date will display in the color red.
+WHEN the user hovers over today's date in the Calendar,
+THEN that date will display in the color green.
+WHEN the user hovers over a future date in the Calendar,
+THEN that date will display in the color gray.
+WHEN the user clicks on a date in the Calendar,
+THEN a popover will appear with the exercises the user chose for that day and the status of those exercises.
+WHEN the user clicks on the "Today" button in the Calendar,
+THEN the Calendar will navigate to the current month.
+
+WHEN the user clicks on "Choose an Exercise Type",
+THEN a list of workout categories is displayed.
+WHEN the user clicks on "Exercises:" after selecting a workout category,
+THEN they will return to the list of workout categories and can select a different category.
+
+WHEN the user selects a workout category of their choosing,
+THEN a list of exercises that correlate to their selected workout category will display.
+WHEN the user clicks the checkbox next to an exercise,
+THEN that exercise is stored and listed in their Workout Planner.
+WHEN the user clicks the "Begin Workout" button,
+THEN the page content is replaced with their Workout Planner.
+
+WHEN the user has selected a workout category,
+THEN the user will see a message pertaining to their selected workout category within the Workout Planner.
+WHEN an exercise is added to the Workout Planner,
+THEN it contains an option for the user to input a quantity that relates to the exercise's designated amount of time or reps.
+THEN it contains a checkbox to indicate whether or not the exercise has been completed yet.
+WHEN the user hovers over an exercise name within the Workout Planner,
+THEN a popover appears that displays a picture of the exercise and information about the exercise.
+WHEN the user clicks on the "Return Home" button,
+THEN the user will return to their Workout Tracker.
 ```
-## Files
-[Link to Deployed Application](URL)
-[Link to Project Repository](URL)
 
 ## Description
 
 ## Visuals
-![Deployed Application Screenshot](file-path-name)
+This is the landing page for users when they visit the website for the first time:
+![Landing Page For First Time Visitors](assets/images/First-Visit-Name-Input.png)
+
+This is the landing page for users who have visited before and have submitted their first name:
+![Landing Page For Returning Visitors](file-path-name)
 
 ## Usage
 
 ## Authors and Acknowledgement
+**Main Contributors:** [Emily Simone](https://github.com/emsim11), [Paul Ruszkay](https://github.com/PaulRusz), and [Tania Bezerra](https://github.com/nybrasil)
 
 ## License
 

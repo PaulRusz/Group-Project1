@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -12,14 +11,12 @@
     <!-- CSS Style Sheet -->
     <link rel="stylesheet" href="./Assets/styles/style.css">
 </head>
-
 <body>
     <header>
         <h1>Workout Tracker</h1>
         <!-- Welcome Back Message -->
         <p id="Welcome" style="display: none;">Welcome back to your fitness tracker!</p>
     </header>
-
     <!-- Landing Page to Enter User's First Name -->
     <div class="User-Input">
         <br>
@@ -34,13 +31,12 @@
             </div>
         </form>
     </div>
-
     <!-- User's Specific Workout Page -->
     <div id="Workout-Page" style="display: none;">
         <!-- Quotable API Random Quote -->
         <p id="Quote"></p>
         <hr>
-        <main>
+        <main id="mainContent">
             <!-- Date Container -->
             <div class="Date">
                 <p class="Date"><strong>Today's Date:</strong></p>
@@ -55,7 +51,7 @@
                     <div class="selectForm">
                         <button class="exerciseButton">Choose an Exercise Type</button><br>
                         <ul class="workoutChoices" style="visibility: hidden;">
-                            <li style="--delay: 1" data-category="8">Complete Arms Workout</li>
+                            <li style="--delay: 1" data-category="8">Complete Arm Workout</li>
                             <li style="--delay: 2" data-category="9">Leg Workout</li>
                             <li style="--delay: 2" data-category="14">Calves Workout</li>
                             <li style="--delay: 3" data-category="11">Upper Body Workout</li>
@@ -71,6 +67,8 @@
                         <button class="Checkbox-Heading">Exercises:</button>
                         <ul id="exercise">
                         </ul>
+                        <!-- Start Workout Button -->
+                        <button id="startWorkout">Begin Workout</button>
                     </div>
                 </div>
                 <!-- Calendar Container -->
@@ -102,26 +100,23 @@
                     </div>
                 </div>
             </div>
-            <!-- Workout Planner Display -->
-            <div id="workoutPlanner">
-                <!-- Update Based On User's Workout Choice Selection -->
-                <h2 id="workoutHeading">Workout Planner</h2>
-                <ul id="exerciseList">
-                    <!-- Workouts Will Populate Here -->
-                </ul>
-            </div>
-            <!-- Start Workout Button -->
-            <button id="Start-Workout">Begin Workout</button>
-            <!-- Page Footer -->
-            <footer>
-                <p id="Footer-Paragraph">Made with ♡ by Paul Ruszkay, Emily Simone, and Tania Bezerra</p>
-                <p>&copy; 2024 Paul Ruszkay, Emily Simone, and Tania Bezerra</p>
-            </footer>
         </main>
-
+        <!-- Workout Planner Display -->
+        <div id="workoutPlanner" style="display: none;">
+            <!-- Update Based On User's Workout Choice Selection -->
+            <h2>Workout Planner</h2>
+            <h3 id="workoutMessage">Message Goes Here...</h3>
+            <ul id="exerciseList">
+                <!-- Workouts Will Populate Here -->
+            </ul>
+            <button id="returnToWorkoutTracker">Return Home</button>
+        </div>
+        <!-- Page Footer -->
+        <footer>
+            <p id="Footer-Paragraph">Made with ♡ by Paul Ruszkay, Emily Simone, and Tania Bezerra</p>
+            <p>&copy; 2024 Paul Ruszkay, Emily Simone, and Tania Bezerra</p>
+        </footer>
     </div>
-
-
     <!-- jQuery Script Files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -134,7 +129,5 @@
         crossorigin="anonymous"></script>
     <!-- JavaScript File -->
     <script src="./Assets/scripts/script.js"></script>
-
 </body>
-
 </html>
