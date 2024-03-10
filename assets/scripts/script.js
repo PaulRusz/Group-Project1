@@ -6,6 +6,9 @@ var userInput = document.getElementById('userInput');
 var workoutPage = document.getElementById('Workout-Page');
 var welcomeMessage = document.getElementById('Welcome');
 
+var previousArrow = document.getElementById ("cal-prev");
+var nextArrow = document.getElementById("cal-next")
+
 // Check if User Name is Already Stored in Local Storage
 var userName = localStorage.getItem('userName');
 
