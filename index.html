@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -11,11 +12,14 @@
     <!-- CSS Style Sheet -->
     <link rel="stylesheet" href="./Assets/styles/style.css">
 </head>
+
 <body>
     <header>
         <h1>Workout Tracker</h1>
         <!-- Welcome Back Message -->
-        <p id="Welcome" style="display: none;">Welcome back to your fitness tracker!</p>
+        <container id="Welcome" style="display: none;">
+            <p>Welcome back to your fitness tracker!</p>
+        </container>
     </header>
     <!-- Landing Page to Enter User's First Name -->
     <div class="User-Input">
@@ -104,7 +108,12 @@
         <!-- Workout Planner Display -->
         <div id="workoutPlanner" style="display: none;">
             <!-- Update Based On User's Workout Choice Selection -->
-            <h2>Workout Planner</h2>
+            <h2 class="workoutPlannerHeader">Workout Planner</h2>
+            <container id="countUpTimer">
+                <label id="minutes">00</label>
+                <label id="colon">:</label>
+                <label id="seconds">00</label>
+            </container>
             <h3 id="workoutMessage">Message Goes Here...</h3>
             <ul id="exerciseList">
                 <!-- Workouts Will Populate Here -->
@@ -130,4 +139,5 @@
     <!-- JavaScript File -->
     <script src="./Assets/scripts/script.js"></script>
 </body>
+
 </html>

@@ -3,7 +3,7 @@ var header = document.querySelector('h1');
 var userInput = document.getElementById('userInput');
 var workoutPage = document.getElementById('Workout-Page');
 var welcomeMessage = document.getElementById('Welcome');
-var previousArrow = document.getElementById ("cal-prev");
+var previousArrow = document.getElementById("cal-prev");
 var nextArrow = document.getElementById("cal-next")
 var userName = localStorage.getItem('userName'); // Check if User Name is Already Stored in Local Storage
 
@@ -14,7 +14,7 @@ if (userName) {
     userInput.style.display = 'none'; // Hide the User Name Form
     welcomeMessage.style.display = 'block'; // Show the Welcome Message
 
-// Function: Submit User Name For the First Time
+    // Function: Submit User Name For the First Time
 } else {
     userInput.addEventListener('submit', function (event) { // Add Event Listener to Form
         event.preventDefault(); // Prevent Form Submission
@@ -83,6 +83,7 @@ const calendarFunction = () => {
     for (let i = lastDayName; i < 6; i++) {
         lit += `<li class="inactive">${i - lastDayName + 1}</li>`;
     };
+
     calendarCurrentDate.innerText = `${months[calendarMonth]} ${calendarYear}`;
     calendarDay.innerHTML = lit;
 };
@@ -159,7 +160,7 @@ var exeButton = $(".exerciseButton").on("click", function () {
             exercisesCheckboxContainer.style.display = 'none'; // Hide the Exercise List
         });
         var clonedExerciseListItem; // Declare Variable Outside Event Listener
-        
+
         // Function: Display Exercise List With Checkboxes When a Workout Choice is Made in WorkoutChoices Menu
         exerciseListButtons.forEach(function (button) {
             button.addEventListener('click', function (event) {
@@ -181,10 +182,10 @@ var exeButton = $(".exerciseButton").on("click", function () {
                         exerciseListItem.appendChild(exerciseListItemBox); // Append Checkbox to List Item
 
                         // Function: Closure to Capture Correct Exercise Item
-                        (function(exerciseItem) {
+                        (function (exerciseItem) {
                             clonedExerciseListItem;
                             var userExerciseList = document.getElementById('exerciseList');
-                            exerciseListItemBox.addEventListener('change', function() {
+                            exerciseListItemBox.addEventListener('change', function () {
 
                                 // Function: Add Selected Exercises to Workout Planner exerciseList
                                 if (exerciseListItemBox.checked) {
@@ -192,7 +193,7 @@ var exeButton = $(".exerciseButton").on("click", function () {
                                     var exerciseListItemWithoutCheckbox = document.createElement('li');
                                     var exerciseNameWithoutCheckbox = document.createTextNode(exercise.name);
                                     exerciseListItemWithoutCheckbox.appendChild(exerciseNameWithoutCheckbox);
-                                    
+
                                     // Function: Create a Text Input For Entering Time or Reps For Each Selected Exercise
                                     var timeRepsInput = document.createElement('input');
                                     timeRepsInput.setAttribute('type', 'text');
@@ -211,7 +212,7 @@ var exeButton = $(".exerciseButton").on("click", function () {
                                     exerciseListItemWithoutCheckbox.appendChild(completionCheckbox);
                                     exerciseListItemWithoutCheckbox.appendChild(completionLabel);
                                     userExerciseList.appendChild(exerciseListItemWithoutCheckbox); // Append Exercise Name Without Checkbox to Workout Planner
-                                
+
                                 } else {
                                     if (clonedExerciseListItem) {
                                         clonedExerciseListItem.remove(); // Remove exerciseListItem From the workoutPlanner if the Checkbox is Unchecked
@@ -225,6 +226,8 @@ var exeButton = $(".exerciseButton").on("click", function () {
                         exerciseList.appendChild(exerciseListItem); // Append List Item to Exercise List
                     };
                     formInstructions.style.display = 'none'; // Hide Form Instructions Once the Checkbox Items Have Appeared
+
+
                 });
             });
         });
@@ -243,11 +246,11 @@ var exeButton = $(".exerciseButton").on("click", function () {
 };
 
 // Function: "Begin Workout" Button To Display Workout Planner
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var startWorkoutButton = document.getElementById('startWorkout');
     var mainContent = document.getElementById('mainContent');
     var workoutPlanner = document.getElementById('workoutPlanner');
-    startWorkoutButton.addEventListener('click', function() {
+    startWorkoutButton.addEventListener('click', function () {
         mainContent.style.display = 'none';
         workoutPlanner.style.display = 'block';
     });
@@ -256,11 +259,11 @@ document.addEventListener('DOMContentLoaded', function() {
 // Function: Display Workout Message Based On Workout Choice Made By User
 const workoutChoicesCategories = document.querySelectorAll('.workoutChoices li'); // Get List of Workout Choices
 workoutChoicesCategories.forEach(item => { // Add Click Event Listener to Each List Item
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
         const selectedCategory = item.textContent.trim(); // Get Text Content of Clicked Item
         console.log(selectedCategory);
         const workoutMessage = document.getElementById('workoutMessage'); // Update Workout Message Based On Selected Workout Category
-        switch(selectedCategory) {
+        switch (selectedCategory) {
             case 'Complete Arm Workout':
                 workoutMessage.textContent = 'Today is Arm Day - Get those biceps pumping!';
                 break;
@@ -293,3 +296,25 @@ workoutChoicesCategories.forEach(item => { // Add Click Event Listener to Each L
         };
     });
 });
+
+
+// Code for a timer to appear and begin counting up when the 'Begin Workout' button is pressed
+var minutesLabel = document.getElementById("minutes")
+var secondsLabel = document.getElementById("seconds")
+var totalSeconds = 0;
+setInterval(setTime, 1000);
+
+function setTime() {
+    ++totalSeconds
+    secondsLabel.innerHTML = pad(totalSeconds % 60)
+    minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
+
+function pad(val) {
+    var valString = val + "";
+    if (valString.length < 2) {
+        return "0" + valString;
+    } else {
+        return valString
+    }
+}
