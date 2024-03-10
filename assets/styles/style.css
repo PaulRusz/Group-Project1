@@ -1,19 +1,29 @@
 /* Header Display */
 header {
-    background-color: lightblue;
+    text-align: center;
+    border: 5px solid #f0e6e3;
+    border-radius: 10px;
+    margin: 10px;
     padding: 10px;
+    background-color: #427884;
+}
+
+body {
+    background-color: #8ed6ee ;
 }
 
 /* Page Heading */
 h1 {
     text-align: center;
-    color: lightcoral;
+    color: #f0e6e3
+    
+
 }
 
 /* Welcome Paragraph */
 #Welcome {
     text-align: center;
-    background-color: lightblue;
+    background-color: #8ed6ee;
 }
 
 /* Input Name Form Div */
@@ -46,7 +56,7 @@ h1 {
 /* Quote Display */
 #Quote {
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
     font-style: italic;
 }
 
@@ -82,12 +92,12 @@ p.Date {
 
 .Form-Instructions {
     padding: 5px;
-    font-size: 18px;
+    font-size: 19px;
     text-align: center;
 }
 
 .selectForm {
-    background-color: lightblue;
+    background-color: #f0e6e3;
     padding: 20px;
     margin: 10px;
     border-radius: 15px;
@@ -96,7 +106,7 @@ p.Date {
 }
 
 .exerciseButton {
-    background-color: lightskyblue;
+    background-color: #8ed6ee;
     border-radius: .5em;
     border: black black;
     font-size: 35px;
@@ -142,7 +152,7 @@ p.Date {
     overflow-y: auto;
     visibility: hidden;
     z-index: 1;
-    background-color: lightblue;
+    background-color: #f0e6e3;
     border-radius: 15px;
     box-shadow: 10px 5px 5px grey;
     padding: 20px;
@@ -154,7 +164,7 @@ p.Date {
     display: initial;
     text-align: center;
     font-size: 35px;
-    background-color: lightskyblue;
+    background-color: #8ed6ee;
     border-radius: .5em;
     padding-left: 15px;
     padding-right: 15px;
@@ -182,7 +192,7 @@ p.Date {
 /* Calendar Display */
 #calendarBox {
     clear: right;
-    background: lightblue;
+    background: #f0e6e3;
     height: fit-content;
     min-height: 400px;
     padding: 10px;
@@ -203,9 +213,9 @@ p.Date {
     display: flex;
     padding: 10px;
     justify-content: space-between;
-    background-color: lightskyblue;
+    background-color: #8ed6ee;
     border-radius: 10px;
-    border: 1px solid black;
+    border: 2px solid black;
     font-family:Arial, Helvetica, sans-serif;
 
     
@@ -238,11 +248,11 @@ header .cal-nav span {
 }
 
 header .cal-nav span:hover {
-    background: whitesmoke;
+    background: white;
 }
 
 header .cal-current-date {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 400;
 }
 
@@ -285,6 +295,9 @@ header .cal-current-date {
     z-index: -1;
 }
 
+
+
+
 .cal-dates li:not(.active):hover::before {
     background-color: lightcoral;
 }
@@ -296,25 +309,29 @@ header .cal-current-date {
 /* Workout Planner */
 #workoutPlanner {
 
-    border: 5px solid lightblue;
-    border-radius: 5px;
+    border: 5px solid #f0e6e3;
+    border-radius: 10px;
     margin: 10px;
     padding: 10px;
-    background-color: #fafafa;
+    background-color: #427884;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 #workoutHeading {
     text-align: center;
+    color: #f0e6e3;
 }
 
 
 
 /* Footer Display */
 footer {
-    background-color: lightblue;
+    
     text-align: center;
-    padding: 5px;
-    margin-top: 10px;
+    border: 5px solid #427884;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #f0e6e3;
 }
 
 @media only screen and (max-width: 600px) {
