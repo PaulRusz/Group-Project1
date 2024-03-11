@@ -25,12 +25,9 @@ h1 {
 #Welcome {
     text-align: center;
     background-color: #8ed6ee;
-<<<<<<< HEAD
-    border-radius: 40% ;
-=======
+    border-radius: 40%;
     border: 2px solid #fafafa;
     border-radius: 25px;
->>>>>>> 935414d1ad176fe95839c9d2558231830e02f610
     font-size: 20px;
     width: fit-content;
     padding: 10px;
@@ -81,18 +78,15 @@ h1 {
     font-size: 22px;
     font-style: italic;
     padding: 10px;
-<<<<<<< HEAD
     background-color: #f0e6e3;
     border-radius: 10%;
     border: 5px solid #427884;
-    margin: 10px
-=======
+    margin: 10px;
     background-color: #fafafa;
     border: 2px solid #427884;
     border-radius: 20px;
     margin-left: 15px;
     margin-right: 15px;
->>>>>>> 935414d1ad176fe95839c9d2558231830e02f610
 }
 
 /* Display Form & Calendar Side-by-Side */
