@@ -1,7 +1,7 @@
 /* Header Display */
 header {
     text-align: center;
-    border: 5px solid #f0e6e3;
+    border: 5px solid #fafafa;
     border-radius: 10px;
     margin: 10px;
     padding: 10px;
@@ -15,8 +15,9 @@ body {
 /* Page Heading */
 h1 {
     text-align: center;
-    color: #f0e6e3;
+    color: #fafafa;
     font-size: 45px;
+    padding-bottom: 10px;
 }
 
 /* Welcome Paragraph */
@@ -24,10 +25,13 @@ h1 {
 #Welcome {
     text-align: center;
     background-color: #8ed6ee;
-    border-radius: 40%;
+    border: 2px solid #fafafa;
+    border-radius: 25px;
     font-size: 20px;
     width: fit-content;
     padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
     margin: 0 auto;
     font-weight: bold;
 }
@@ -69,11 +73,14 @@ h1 {
 /* Quote Display */
 #Quote {
     text-align: center;
-    font-size: 23px;
+    font-size: 22px;
     font-style: italic;
     padding: 10px;
-    background-color: #f0e6e3;
-    border-radius: 10%;
+    background-color: #fafafa;
+    border: 2px solid #427884;
+    border-radius: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 /* Display Form & Calendar Side-by-Side */
@@ -112,7 +119,7 @@ p.Date {
 }
 
 .selectForm {
-    background-color: #f0e6e3;
+    background-color: #fafafa;
     padding: 20px;
     margin: 10px;
     border-radius: 15px;
@@ -167,7 +174,7 @@ p.Date {
     overflow-y: auto;
     visibility: hidden;
     z-index: 1;
-    background-color: #f0e6e3;
+    background-color: #fafafa;
     border-radius: 15px;
     box-shadow: 10px 5px 5px grey;
     padding: 20px;
@@ -210,7 +217,7 @@ p.Date {
 /* Calendar Display */
 #calendarBox {
     clear: right;
-    background: #f0e6e3;
+    background: #fafafa;
     height: fit-content;
     min-height: 400px;
     padding: 10px;
@@ -328,11 +335,11 @@ header .cal-current-date {
 
 /* Workout Planner */
 #workoutPlanner {
-    border: 5px solid #f0e6e3;
+    border: 5px solid #fafafa;
     border-radius: 10px;
     margin: 10px;
     padding: 10px;
-    background-color: #f0e6e3;
+    background-color: #fafafa;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
 
@@ -340,7 +347,7 @@ header .cal-current-date {
 
 #workoutHeading {
     text-align: center;
-    color: #f0e6e3;
+    color: #fafafa;
 }
 
 .workoutPlannerHeader {
@@ -368,7 +375,7 @@ footer {
     border: 5px solid #427884;
     border-radius: 10px;
     padding: 10px;
-    background-color: #f0e6e3;
+    background-color: #fafafa;
     position: absolute;
     width: 100%;
     height: 10rem;
