@@ -323,20 +323,16 @@ header .cal-current-date {
     z-index: -1;
 }
 
-.cal-dates li:not(.active):hover::before {
+.past:hover::before {
     background-color: lightcoral;
 }
 
-.cal-body .cal-dates li.active {
+.current-day:hover::before {
     background: greenyellow;
-    color: black;
-    border-radius: 50%;
 }
 
-.cal-body .cal-dates li.future {
+.future:hover::before {
     background: lightgrey;
-    color: black;
-    border-radius: 50%;
 }
 
 /* Workout Planner */
