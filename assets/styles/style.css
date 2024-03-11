@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+}
+
 /* Header Display */
 header {
     text-align: center;
@@ -136,7 +140,7 @@ p.Date {
 .exerciseButton {
     background-color: #8ed6ee;
     border-radius: .5em;
-    border: black black;
+    border: black;
     font-size: 35px;
     padding-left: 15px;
     padding-right: 15px;
@@ -235,44 +239,25 @@ p.Date {
 
 .cal-container {
     width: 500px;
-    border-radius: 10px;
-    margin: 10px;
-    display: flex;
 }
 
 .cal-header {
-    display: flex;
-    padding: 10px;
-    justify-content: space-between;
     background-color: #8ed6ee;
-    border-radius: 10px;
-    border: 2px solid black;
+    border: 2px solid #334A52;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.weekdays {
-    text-decoration: underline;
-    font-weight: bold;
 }
 
 header .cal-nav {
     display: flex;
-    padding-right: 15px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header .cal-nav span {
-    height: 35px;
-    width: 35px;
-    text-align: center;
-    font-size: 2rem;
-    border: 0.2em solid black;
-    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border: 2px solid #334A52;
     border-radius: 50%;
-    margin-right: 10px;
-}
-
-.cal-nav span:last-child {
-    margin-right: -15px;
 }
 
 header .cal-nav span:hover {
@@ -280,8 +265,21 @@ header .cal-nav span:hover {
 }
 
 header .cal-current-date {
-    font-size: 3rem;
+    font-size: xx-large;
     font-weight: 400;
+}
+#cal-prev {
+    vertical-align: -webkit-baseline-middle;
+}
+#today-button {
+    padding: 5px 20px 5px 20px;
+    border: 2px solid #334A52;
+    border-radius: 10px;
+}
+
+.weekdays {
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .cal-body {
