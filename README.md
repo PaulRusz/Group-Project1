@@ -65,7 +65,37 @@ WHEN the user clicks on the "Return Home" button,
 THEN the user will return to their Workout Tracker.
 ```
 
+# Workout Tracker
+
 ## Description
+The Workout Tracker is a web-based application designed to help users plan, track, and manage their workout routines effectively. Whether you're a fitness enthusiast or just starting on your fitness journey, this application provides a user-friendly interface to streamline your workout planning process.
+
+
+## Features
+
+. User Authentication: Secure login system to ensure only authorized users can access their workout data.
+. Workout Selection: Choose from a variety of workout types, including arms, legs, upper body, back, shoulders, abs, cardio, and rest day.
+. Workout Planner: Dynamically generates personalized workout plans based on user preferences and fitness goals.
+. Calendar Integration: Schedule workouts conveniently using the built-in calendar view and track progress over time.
+. Responsive Design: Optimized for various devices, ensuring seamless user experience across desktop, tablet, and mobile platforms.
+. Timer Functionality: Track workout duration with an integrated timer to optimize training sessions.
+. Customizable: Easily customize workout plans and exercises to fit individual needs and preferences.
+
+
+## Technologies Used
+. HTML, CSS: Frontend development for creating a visually appealing and responsive user interface.
+. JavaScript (jQuery): Backend functionality and dynamic content generation.
+. Bootstrap: Frontend framework for styling and layout components.
+. Day.js: Lightweight JavaScript date library for handling date and time calculations.
+
+
+## Usage
+1. Sign Up/Login: Create an account or log in with your credentials to access the workout tracker.
+2. Select Workout: Choose the type of workout you want to do from the available options.
+3. Plan Workout: Customize your workout plan based on your preferences and goals.
+4. Schedule Workouts: Use the calendar to schedule your workouts and stay on track with your fitness routine.
+5. Track Progress: Monitor your progress over time and adjust your workouts accordingly to achieve your fitness goals effectively.
+
 
 ## Visuals
 This is the landing page for users when they visit the website for the first time:
@@ -74,7 +104,7 @@ This is the landing page for users when they visit the website for the first tim
 This is the landing page for users who have visited before and have submitted their first name:
 ![Landing Page For Returning Visitors](file-path-name)
 
-## Usage
+
 
 ## Authors and Acknowledgement
 **Main Contributors:** [Emily Simone](https://github.com/emsim11), [Paul Ruszkay](https://github.com/PaulRusz), and [Tania Bezerra](https://github.com/nybrasil)
