@@ -80,7 +80,7 @@ This is the landing page for users who have visited before and have submitted th
 **Main Contributors:** [Emily Simone](https://github.com/emsim11), [Paul Ruszkay](https://github.com/PaulRusz), and [Tania Bezerra](https://github.com/nybrasil)
 
 ## License
-
+This application is licensed under the MIT License - see the LICENSE file for details.
 
 
 
