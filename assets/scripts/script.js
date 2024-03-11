@@ -64,29 +64,28 @@ const months = [
 
 // Function: Show Calendar
 const calendarFunction = () => {
+    const today = dayjs();
     var dayOne = new Date(calendarYear, calendarMonth, 1).getDay(); // Obtain First Day of the New Month
     var lastDay = new Date(calendarYear, calendarMonth + 1, 0).getDate(); // Obtain Last Day of the New Month
     var lastDayName = new Date(calendarYear, calendarMonth, lastDay).getDay(); // Obtain Day Name of the Last Day in the Month
     var monthLastDate = new Date(calendarYear, calendarMonth, 0).getDate(); // Obtain Last Date of the Previous Month
     var lit = "";
     for (let i = dayOne; i > 0; i--) { // Add Last Dates of the Previous Month
-        lit += `<li class="inactive">${monthLastDate - i}</li>`;
+        lit += `<li class="inactive past">${monthLastDate - i}</li>`;
     };
-    for (let i = 1; i <= lastDay; i++) { // Add Dates of the Current Month
-        var isToday = i === date.getDate()
-            && calendarMonth === new Date().getMonth()
-            && calendarYear === new Date().getFullYear()
-            ? "active"
-            : "";
+    for (let i = 1; i <= lastDay; i++) {
+        const date = dayjs(`${months[calendarMonth]} ${i}, ${calendarYear}`, 'MMMM D, YYYY'); // Add Dates of the Current Month
+        const isToday = date.isSame(today, 'day') ? "active current-day" : (date.isBefore(today, 'day') ? "active past" : "active future");
         lit += `<li class="${isToday}">${i}</li>`;
     };
-    for (let i = lastDayName; i < 6; i++) {
-        lit += `<li class="inactive">${i - lastDayName + 1}</li>`;
-    };
 
+    for (let i = lastDayName; i < 6; i++) {
+        lit += `<li class="inactive future">${i - lastDayName + 1}</li>`;
+    };
     calendarCurrentDate.innerText = `${months[calendarMonth]} ${calendarYear}`;
     calendarDay.innerHTML = lit;
 };
+calendarFunction();
 
 // Function: Navigation Buttons Event Listeners
 const prevButton = document.getElementById('cal-prev');
