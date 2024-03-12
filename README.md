@@ -88,11 +88,11 @@ The Workout Tracker is a web-based application designed to help users plan, trac
 2. A random quote is then generated using the Quotable API and placed below the header of the Webpage.
 3. Press the 'Choose an Exercise Type' button, at which time a list of muscle groups will appear.
 4. Select workout from the displayed choices.
-4. The calendar is functional and can display previous months, days, and years as well as highlight past days in red, future days in grey, and the current day in green.
-5. After selecting one of the displayed muscle groups another list will appear using the WGER API where the user can select specific workouts to complete.
-6. Customize your workout plan based on your preferences and goals.
-7. Press 'Begin Workout' button at the bottom of the container.
-7. Monitor your progress by placing your time & number of reps in the box and adjust your workouts accordingly to achieve your fitness goals effectively.
+5. The calendar is functional and can display previous months, days, and years as well as highlight past days in red, future days in grey, and the current day in green.
+6. After selecting one of the displayed muscle groups another list will appear using the WGER API where the user can select specific workouts to complete.
+7. Customize your workout plan based on your preferences and goals.
+8. Press 'Begin Workout' button at the bottom of the container.
+9. Monitor your progress by placing your time & number of reps in the box and adjust your workouts accordingly to achieve your fitness goals effectively.
 
 ## Visuals
 This is the landing page for users when they visit the website for the first time:
