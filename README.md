@@ -2,7 +2,7 @@
 Group Project #1
 
 ## Links
-[Link to Deployed Application](URL)
+[Link to Deployed Application](https://paulrusz.github.io/Group-Project1/)
 
 [GitHub Repository](https://github.com/PaulRusz/Group-Project1)
 
@@ -87,22 +87,32 @@ The Workout Tracker is a web-based application designed to help users plan, trac
 . JavaScript (jQuery): Backend functionality and dynamic content generation.
 . Bootstrap: Frontend framework for styling and layout components.
 . Day.js: Lightweight JavaScript date library for handling date and time calculations.
+. WGER API: Used for loading exercise list in Exercise Type Container
+. Quotable  API: Used for loading random quotes on webpage
 
 
 ## Usage
-1. Sign Up/Login: Create an account or log in with your credentials to access the workout tracker.
-2. Select Workout: Choose the type of workout you want to do from the available options.
-3. Plan Workout: Customize your workout plan based on your preferences and goals.
-4. Schedule Workouts: Use the calendar to schedule your workouts and stay on track with your fitness routine.
-5. Track Progress: Monitor your progress over time and adjust your workouts accordingly to achieve your fitness goals effectively.
+1. Type the name you wish to use into the 'First Name' box to access the workout tracker.
+2. A random quote is then generated using the Quotable API and placed below the header of the Webpage.
+3. Press the 'Choose an Exercise Type' button, at which time a list of muscle groups will appear.
+4. Select workout from the displayed choices.
+4. The calendar is functional and can display previous months, days, and years as well as highlight past days in red, future days in grey, and the current day in green.
+5. After selecting one of the displayed muscle groups another list will appear using the WGER API where the user can select specific workouts to complete.
+6. Customize your workout plan based on your preferences and goals.
+7. Press 'Begin Workout' button at the bottom of the container.
+7. Monitor your progress by placing your time & number of reps in the box and adjust your workouts accordingly to achieve your fitness goals effectively.
 
 
 ## Visuals
 This is the landing page for users when they visit the website for the first time:
-![Landing Page For First Time Visitors](assets/images/First-Visit-Name-Input.png)
+![Workout Tracker Landing Page For First Time Visitors](assets/images/WorkoutTracker1.png)
+![Workout Tracker Home Page](assets/images/WorkoutTracker2.png)
+![Workout Tracker Page With Exercise Choices](assets/images/WorkoutTracker3.png)
+![Workout Tracker Page With Exercise Checkbox List](assets/images/WorkoutTracker4.png)
+![Wokrout Planner Page With Selected Exercises & Timer](assets/images/WorkoutTracker5.png)
 
 This is the landing page for users who have visited before and have submitted their first name:
-![Landing Page For Returning Visitors](file-path-name)
+![Landing Page For Returning Visitors](assets/images/WorkoutTracker2.png)
 
 
 
