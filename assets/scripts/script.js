@@ -108,6 +108,21 @@ nextButton.addEventListener('click', function () {
 });
 calendarFunction();
 
+// Check if Current Month is Different From Displayed Month
+function isCurrentMonth() {
+    const currentMonth = dayjs().month();
+    return currentMonth === calendarMonth;
+};
+// Event Listener for "Today" Button Click
+const todayButton = document.getElementById('today-button');
+todayButton.addEventListener('click', function() {
+    if (!isCurrentMonth()) {
+        calendarMonth = dayjs().month();
+        calendarYear = dayjs().year();
+        calendarFunction(); // Update Calendar Display
+    }
+});
+
 // Feature: Exercise Data (WGER API)
 var wgerEndpoints = { // JSON Object Containing API Endpoints
     'exercise': 'https://wger.de/api/v2/exercise/?limit=100&language=2',
