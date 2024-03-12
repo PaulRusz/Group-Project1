@@ -37,8 +37,6 @@ WHEN the user hovers over today's date in the Calendar,
 THEN that date will display in the color green.
 WHEN the user hovers over a future date in the Calendar,
 THEN that date will display in the color gray.
-WHEN the user clicks on a date in the Calendar,
-THEN a popover will appear with the exercises the user chose for that day and the status of those exercises.
 WHEN the user clicks on the "Today" button in the Calendar,
 THEN the Calendar will navigate to the current month.
 
@@ -59,37 +57,31 @@ THEN the user will see a message pertaining to their selected workout category w
 WHEN an exercise is added to the Workout Planner,
 THEN it contains an option for the user to input a quantity that relates to the exercise's designated amount of time or reps.
 THEN it contains a checkbox to indicate whether or not the exercise has been completed yet.
-WHEN the user hovers over an exercise name within the Workout Planner,
-THEN a popover appears that displays a picture of the exercise and information about the exercise.
+WHEN the user clicks "Begin Workout" at the bottom of the list of exercises in the Workout Tracker,
+THEN they page will display the Workout Planner, a timer, and their personalized exercise category message.
 WHEN the user clicks on the "Return Home" button,
 THEN the user will return to their Workout Tracker.
 ```
 
-# Workout Tracker
-
 ## Description
 The Workout Tracker is a web-based application designed to help users plan, track, and manage their workout routines effectively. Whether you're a fitness enthusiast or just starting on your fitness journey, this application provides a user-friendly interface to streamline your workout planning process.
 
-
 ## Features
-
-. User Authentication: Secure login system to ensure only authorized users can access their workout data.
-. Workout Selection: Choose from a variety of workout types, including arms, legs, upper body, back, shoulders, abs, cardio, and rest day.
-. Workout Planner: Dynamically generates personalized workout plans based on user preferences and fitness goals.
-. Calendar Integration: Schedule workouts conveniently using the built-in calendar view and track progress over time.
-. Responsive Design: Optimized for various devices, ensuring seamless user experience across desktop, tablet, and mobile platforms.
-. Timer Functionality: Track workout duration with an integrated timer to optimize training sessions.
-. Customizable: Easily customize workout plans and exercises to fit individual needs and preferences.
-
+- User Authentication: Secure login system to ensure only authorized users can access their workout data.
+- Workout Selection: Choose from a variety of workout types, including arms, legs, upper body, back, shoulders, abs, cardio, and rest day.
+- Workout Planner: Dynamically generates personalized workout plans based on user preferences and fitness goals-
+- Calendar Integration: Schedule workouts conveniently using the built-in calendar view and track progress over-time.
+- Responsive Design: Optimized for various devices, ensuring seamless user experience across desktop, tablet, a-d mobile platforms.
+- Timer Functionality: Track workout duration with an integrated timer to optimize training sessions-
+- Customizable: Easily customize workout plans and exercises to fit individual needs and preferences-
 
 ## Technologies Used
-. HTML, CSS: Frontend development for creating a visually appealing and responsive user interface.
-. JavaScript (jQuery): Backend functionality and dynamic content generation.
-. Bootstrap: Frontend framework for styling and layout components.
-. Day.js: Lightweight JavaScript date library for handling date and time calculations.
-. WGER API: Used for loading exercise list in Exercise Type Container
-. Quotable  API: Used for loading random quotes on webpage
-
+- HTML, CSS: Frontend development for creating a visually appealing and responsive user interface.
+- JavaScript (jQuery): Backend functionality and dynamic content generation.
+- Bootstrap: Frontend framework for styling and layout components.
+- Day.js: Lightweight JavaScript date library for handling date and time calculations.
+- WGER API: Used for loading exercise list in Exercise Type Container
+- Quotable  API: Used for loading random quotes on webpage
 
 ## Usage
 1. Type the name you wish to use into the 'First Name' box to access the workout tracker.
@@ -102,7 +94,6 @@ The Workout Tracker is a web-based application designed to help users plan, trac
 7. Press 'Begin Workout' button at the bottom of the container.
 7. Monitor your progress by placing your time & number of reps in the box and adjust your workouts accordingly to achieve your fitness goals effectively.
 
-
 ## Visuals
 This is the landing page for users when they visit the website for the first time:
 ![Workout Tracker Landing Page For First Time Visitors](assets/images/WorkoutTracker1.png)
@@ -114,20 +105,8 @@ This is the landing page for users when they visit the website for the first tim
 This is the landing page for users who have visited before and have submitted their first name:
 ![Landing Page For Returning Visitors](assets/images/WorkoutTracker2.png)
 
-
-
 ## Authors and Acknowledgement
 **Main Contributors:** [Emily Simone](https://github.com/emsim11), [Paul Ruszkay](https://github.com/PaulRusz), and [Tania Bezerra](https://github.com/nybrasil)
 
 ## License
 This application is licensed under the MIT License - see the LICENSE file for details.
-
-
-
-
-
-
-
-
-
-
